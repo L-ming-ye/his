@@ -1,0 +1,41 @@
+.my-page{
+	width: 40%;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+
+.title{
+	text-align: center;
+}
+
+.form-label{
+	margin: 0 auto;
+	width: 80%;
+	height: 30px;
+	display: flex;
+	justify-content: space-between;
+	line-height: 40px;
+	font-size:20px;
+	margin-top: 20px;
+}
+
+.form-label .my-input{
+	width: 80%;
+}
+
+.verify{
+	width: 50%;
+}
+.verify-image{
+	width: 25%;
+}
+
+.form-btn{
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+}
+
+.form-btn button{
+	margin: 20px;
+}
