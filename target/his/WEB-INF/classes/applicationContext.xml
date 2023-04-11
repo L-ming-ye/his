@@ -11,7 +11,7 @@
     <!-- 加载解析jdbc.properties的标签 -->
     <context:property-placeholder location="classpath:datasource.properties"/>
     <!-- service层的注解扫描 -->
-    <context:component-scan base-package="cn.myeit.service"/>
+    <context:component-scan base-package="cn.myeit"/>
     <!-- 配置数据源bean -->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="${jdbc.driverClassName}"/>
