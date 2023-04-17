@@ -17,6 +17,13 @@
         <property name="prefix" value="/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
+
+
+    <!--向容器自动注入配置-->
+    <context:annotation-config />
+
     <!-- 静态文件放行，该文件夹下的文件会放行 -->
-    <mvc:resources mapping="/static/**" location="/static/"/>
+    <mvc:resources mapping="/view/**" location="classpath:/view/"/>
+
+    <mvc:resources mapping="swagger-ui.html" location="classpath:/META-INF/resources/" />
 </beans>
