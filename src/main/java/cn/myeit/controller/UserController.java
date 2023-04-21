@@ -187,7 +187,6 @@ public class UserController extends AutoUtil{
                 }
             }
         }catch (Exception e){
-            e.printStackTrace();
             return JsonUtil.error();
         }finally {
             if(jedis != null){
