@@ -2,7 +2,7 @@ package cn.myeit.util;
 
 import cn.hutool.captcha.CaptchaUtil;
 import cn.hutool.captcha.ICaptcha;
-import cn.hutool.captcha.ShearCaptcha;
+import cn.hutool.core.util.RandomUtil;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletResponse;
@@ -14,6 +14,7 @@ import java.io.IOException;
 @Component
 public class VerifyUtil {
     /**
+     * 生成验证码并产生图片到网络流
      * @param count 生成的字符数 <br/>
      * @param thickness 干扰线宽度 <br/>
      * @param response 响应对象 <br/>
@@ -28,5 +29,15 @@ public class VerifyUtil {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+
+    /**
+     * 只生成随机的数字-英文的验证码不生成图片
+     * @param count 验证码的个数
+     * @return 验证码
+     */
+    public String createVerifyCode(int count){
+        return RandomUtil.randomString(count);
     }
 }

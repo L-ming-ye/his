@@ -111,6 +111,19 @@
     </dependency>
     <!-- Swagger2 End -->
 
+    <!--邮件发送-->
+    <dependency>
+      <groupId>com.sun.mail</groupId>
+      <artifactId>javax.mail</artifactId>
+      <version>1.6.2</version>
+    </dependency>
+
+    <!--redis-->
+    <dependency>
+      <groupId>redis.clients</groupId>
+      <artifactId>jedis</artifactId>
+      <version>4.2.3</version>
+    </dependency>
 
   </dependencies>
   <build>

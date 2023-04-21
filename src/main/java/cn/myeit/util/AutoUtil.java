@@ -12,4 +12,7 @@ public class AutoUtil {
 
     @Autowired
     public VerifyUtil verifyUtil;
+
+    @Autowired
+    public RedisUtil redisUtil;
 }

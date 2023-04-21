@@ -36,7 +36,7 @@ $(document).ready(function(){
 			//检查完成开始发送请求
 			$.ajax({
 				url:"/his/user/login",
-				type:"POST",
+				method:"POST",
 				data:{
 					"username":username,
 					"password":password,

@@ -3,13 +3,13 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:aop="http://www.springframework.org/schema/aop"
        xmlns:tx="http://www.springframework.org/schema/tx"
-       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans.xsd
                            http://www.springframework.org/schema/context
                            http://www.springframework.org/schema/context/spring-context.xsd">
-    <!-- 加载解析jdbc.properties的标签 -->
-    <context:property-placeholder location="classpath:datasource.properties"/>
+    <!-- 有多个properties需要读入使用通配符*.properties -->
+    <context:property-placeholder location="classpath:*.properties"/>
     <!-- service层的注解扫描 -->
     <context:component-scan base-package="cn.myeit"/>
     <!-- 配置数据源bean -->
@@ -28,4 +28,5 @@
         <property name="basePackage" value="cn.myeit.mapper" />
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
     </bean>
+
 </beans>
