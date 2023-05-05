@@ -9,25 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5e71ed7-20b8-4f7c-a3b8-2422390f9377" name="Changes" comment="找回密码功能">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/myeit/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/myeit/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/myeit/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/myeit/domain/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/myeit/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/myeit/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/myeit/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/myeit/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/js/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/myeit/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/myeit/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/myeit/domain/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/myeit/domain/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/myeit/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/myeit/mapper/UserMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/myeit/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/myeit/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/domain/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/domain/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/mapper/UserMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/login.html" afterDir="false" />
+    <list default="true" id="f5e71ed7-20b8-4f7c-a3b8-2422390f9377" name="Changes" comment="添加用户功能 + 查看个人信息 + 退出登录">
+      <change beforePath="$PROJECT_DIR$/target/classes/view/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/js/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/js/login.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -288,7 +272,7 @@
       <workItem from="1683196287942" duration="4673000" />
       <workItem from="1683268780468" duration="2108000" />
       <workItem from="1683278376115" duration="1188000" />
-      <workItem from="1683280618739" duration="13209000" />
+      <workItem from="1683280618739" duration="13549000" />
     </task>
     <task id="LOCAL-00001" summary="构建项目">
       <created>1681144545416</created>
@@ -381,7 +365,21 @@
       <option name="project" value="LOCAL" />
       <updated>1682111033403</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="添加用户功能 + 查看个人信息 + 退出登录">
+      <created>1683305664430</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1683305664430</updated>
+    </task>
+    <task id="LOCAL-00015" summary="添加用户功能 + 查看个人信息 + 退出登录">
+      <created>1683305736166</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1683305736166</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -419,7 +417,8 @@
     <MESSAGE value="登录" />
     <MESSAGE value="登录功能" />
     <MESSAGE value="找回密码功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="找回密码功能" />
+    <MESSAGE value="添加用户功能 + 查看个人信息 + 退出登录" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加用户功能 + 查看个人信息 + 退出登录" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

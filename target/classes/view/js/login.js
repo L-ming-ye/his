@@ -45,7 +45,8 @@ $(document).ready(function(){
 				success:function(e){
 					if(e.msg == "登录成功"){
 						//跳转页面
-						
+						alert("登录成功");
+						window.location.replace("/his/view/user/desktop.html");
 					}else{
 						//登录失败 将内容展示出来
 						var checkText = $("#check-text");
