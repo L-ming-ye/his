@@ -27,9 +27,20 @@ $(document).ready(function(){
 		if($(".my-box").length>0){
 			$(".my-box").show();
 		}else{
-			var divBox = '<div class="my-box">123</div>';
+			var divBox = '<div class="my-box"></div>';
 			$(".layui-body").append(divBox);
 			$(".my-box").show().load("/his/view/user/my.html");
+		}
+	});
+	
+	$(".change").click(function(){
+		bodyHides();
+		if($(".change-box").length>0){
+			$(".change-box").show();
+		}else{
+			var divBox = '<div class="change-box"></div>';
+			$(".layui-body").append(divBox);
+			$(".change-box").show().load("/his/view/user/change.html");
 		}
 	});
 

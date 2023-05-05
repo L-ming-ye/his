@@ -585,3 +585,47 @@ Select("SELECT uid,uname,age,sex,zjm,email,createTime,createUid,updateTime,updat
 
 将session里user删除 重定向到登录页面
 
+## 修改密码
+
+### 功能设计
+
+根据session里的user数据的uid 和旧密码 查找用户判断密码是否正确如果查找到了密码正确否则错误 密码正确修改密码 否则返回原密码错误
+
+**Controller** (调用了两次sql 可以少些两个service和sql语句 并且如果一个sql完成不知道修改失败是因为sql的问题还是原密码错误的问题)
+
+```java
+ @ApiOperation(value = "用户使用原密码的修改密码", notes = "用户使用原密码的修改密码")
+    @PostMapping("/update")
+    public JsonUtil update(HttpSession session,String oldPassword,String password,String checkPassword){
+        User user = (User) session.getAttribute("user");
+        //判断是否登录
+        if(user == null){
+            return JsonUtil.ok("请登录");
+        }
+        //检查数据的完整性
+        if(oldPassword == null || "".equals(oldPassword)){
+            return JsonUtil.ok("请输入旧密码");
+        }
+        if(password == null || "".equals(password)){
+            return JsonUtil.ok("请输入新密码");
+        }
+        if(checkPassword == null || "".equals(checkPassword)){
+            return JsonUtil.ok("请输入确认密码");
+        }
+        //判断新密码的两次密码是否相同
+        if(!checkPassword.equals(password)){
+            return JsonUtil.ok("两次密码不一样");
+        }
+        //判断旧密码是否正确
+        User checkUser = userService.login(user.getZjm(), oldPassword);
+        if(checkUser == null){
+            return JsonUtil.ok("原密码错误");
+        }
+        Integer count = userService.changePass(user.getUid(),password);
+        if(count>0){
+            return JsonUtil.ok("修改成功");
+        }else{
+            return JsonUtil.ok("修改失败");
+        }
+    }
+```

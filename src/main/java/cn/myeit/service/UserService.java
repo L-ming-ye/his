@@ -34,13 +34,18 @@ public class UserService {
         return userMapper.findUserByZjmOrEmail(username);
     }
 
+
     /**
-     * 修改密码
+     * 根据uid修改密码
+     * @param uid
+     * @param password
+     * @return
      */
     public Integer changePass(Long uid,String password){
         //将加密后的密码传入
         return userMapper.updateUserPasswordByUid(uid,SecureUtil.md5(password));
     }
+
 
     public Integer addUser(User user){
         String password = "123456";//初始密码

@@ -9,7 +9,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5e71ed7-20b8-4f7c-a3b8-2422390f9377" name="Changes" comment="添加用户功能 + 查看个人信息 + 退出登录" />
+    <list default="true" id="f5e71ed7-20b8-4f7c-a3b8-2422390f9377" name="Changes" comment="添加用户功能 + 查看个人信息 + 退出登录">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/myeit/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/myeit/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/myeit/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/myeit/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/js/desktop.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/js/desktop.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/js/my.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/js/my.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/js/useradd.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/js/useradd.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/user/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/user/add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/user/desktop.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/user/desktop.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/myeit/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/myeit/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/myeit/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/myeit/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/js/desktop.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/js/desktop.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/js/my.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/js/my.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/js/useradd.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/js/useradd.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/user/desktop.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/user/desktop.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/js/desktop.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/js/desktop.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/js/my.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/js/my.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/js/useradd.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/js/useradd.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/user/desktop.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/user/desktop.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -93,6 +115,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="Push.Settings">
+    <force-push-targets>
+      <force-push-target remote-path="his" branch="main" />
+    </force-push-targets>
+  </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="cn.myeit.config" />
@@ -111,7 +138,7 @@
       <recent name="E:\Project\his\server\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat 服务器.Tomcat 9.0.65">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.65">
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="test.Test" />
       <module name="his" />
@@ -267,6 +294,7 @@
       <workItem from="1683280618739" duration="13549000" />
       <workItem from="1683305789991" duration="365000" />
       <workItem from="1683306169832" duration="98000" />
+      <workItem from="1683306285351" duration="4077000" />
     </task>
     <task id="LOCAL-00001" summary="构建项目">
       <created>1681144545416</created>
@@ -394,7 +422,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683306190737</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="添加用户功能 + 查看个人信息 + 退出登录">
+      <created>1683306307358</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1683306307358</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

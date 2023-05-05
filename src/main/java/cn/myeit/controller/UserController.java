@@ -131,7 +131,7 @@ public class UserController extends AutoUtil{
         }
     }
 
-    @ApiOperation(value = "修改密码",notes = "修改密码")
+    @ApiOperation(value = "找回密码的修改密码",notes = "找回密码的修改密码")
     @PostMapping("/change")
     public JsonUtil change(String username, String password, String checkPassword, String verify){
         //判断两次密码是否不一致
@@ -272,6 +272,41 @@ public class UserController extends AutoUtil{
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("redirect:/view/login.html");
         return modelAndView;
+    }
+
+    @ApiOperation(value = "用户使用原密码的修改密码", notes = "用户使用原密码的修改密码")
+    @PostMapping("/update")
+    public JsonUtil update(HttpSession session,String oldPassword,String password,String checkPassword){
+        User user = (User) session.getAttribute("user");
+        //判断是否登录
+        if(user == null){
+            return JsonUtil.ok("请登录");
+        }
+        //检查数据的完整性
+        if(oldPassword == null || "".equals(oldPassword)){
+            return JsonUtil.ok("请输入旧密码");
+        }
+        if(password == null || "".equals(password)){
+            return JsonUtil.ok("请输入新密码");
+        }
+        if(checkPassword == null || "".equals(checkPassword)){
+            return JsonUtil.ok("请输入确认密码");
+        }
+        //判断新密码的两次密码是否相同
+        if(!checkPassword.equals(password)){
+            return JsonUtil.ok("两次密码不一样");
+        }
+        //判断旧密码是否正确
+        User checkUser = userService.login(user.getZjm(), oldPassword);
+        if(checkUser == null){
+            return JsonUtil.ok("原密码错误");
+        }
+        Integer count = userService.changePass(user.getUid(),password);
+        if(count>0){
+            return JsonUtil.ok("修改成功");
+        }else{
+            return JsonUtil.ok("修改失败");
+        }
     }
 
     @GetMapping("/test")

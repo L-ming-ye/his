@@ -8,7 +8,8 @@ $(document).ready(function(){
 			$(".my-age").text(user.age);
 			$(".my-email").text(user.email);
 			$(".my-sex").text(user.sex==0?'男':user.sex==1?'女':'未知');
-			$(".my-time").text(formatTime(user.createTime));
+			var time = formatTime(user.createTime);
+			$(".my-time").text(time==null?'未知':time);
 			
 		})
 	};
