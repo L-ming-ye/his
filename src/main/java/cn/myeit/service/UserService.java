@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import sun.security.krb5.internal.PAData;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class UserService {
@@ -29,7 +30,7 @@ public class UserService {
     /**
      * 用户找回密码发送邮件
      */
-    public User find(String username){
+    public User findUsers(String username){
         return userMapper.findUserByZjmOrEmail(username);
     }
 
@@ -38,7 +39,17 @@ public class UserService {
      */
     public Integer changePass(Long uid,String password){
         //将加密后的密码传入
-        return userMapper.UpdateUserPasswordByUid(uid,SecureUtil.md5(password));
+        return userMapper.updateUserPasswordByUid(uid,SecureUtil.md5(password));
+    }
+
+    public Integer addUser(User user){
+        String password = "123456";//初始密码
+        password = SecureUtil.md5(password);
+        return userMapper.insertUser(user,password);
+    }
+
+    public List<User> changeZjmAndEmail(String zjm,String email){
+        return userMapper.findUserByZjmAndEmail(zjm,email);
     }
 
 }

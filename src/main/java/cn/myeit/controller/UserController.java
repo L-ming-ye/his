@@ -8,14 +8,13 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.models.auth.In;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.Transaction;
 import springfox.documentation.spring.web.json.Json;
 
 import javax.servlet.http.HttpSession;
-import java.util.Map;
-import java.util.Random;
-import java.util.UUID;
+import java.util.*;
 
 /**
  * 用户的控制层
@@ -45,6 +44,7 @@ public class UserController extends AutoUtil{
             //查到数据 判断用户的状态
             Integer status = user.getStatus();
             if(status == 0){
+                session.setAttribute("user",user);
                 return JsonUtil.ok("登录成功");
             }else if(status == 1) {
                 return JsonUtil.ok("账号被封禁");
@@ -57,7 +57,7 @@ public class UserController extends AutoUtil{
     @ApiOperation(value = "用户找回密码",notes = "用户找回密码发送邮件")
     @PostMapping("/find")
     public JsonUtil find(String username){
-        User user = userService.find(username);
+        User user = userService.findUsers(username);
         //判断是否查询到用户
         if(user == null){
             //没有数据
@@ -141,7 +141,7 @@ public class UserController extends AutoUtil{
         Jedis jedis = null;
         try{
             //根据助记码/邮箱查询用户信息
-            User user = userService.find(username);
+            User user = userService.findUsers(username);
             //判断是否查询到用户
             if(user == null){
                 //没有数据
@@ -186,7 +186,7 @@ public class UserController extends AutoUtil{
                     return JsonUtil.ok("用户状态异常");
                 }
             }
-        }catch (Exception e){
+        }catch (Exception e){   
             return JsonUtil.error();
         }finally {
             if(jedis != null){
@@ -195,8 +195,89 @@ public class UserController extends AutoUtil{
         }
     }
 
+    @ApiOperation(value="展示新增用户功能页面", notes = "展示新增用户功能页面")
+    @GetMapping("/add")
+    public ModelAndView toAdd(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("redirect:/view/user/add.html");
+        return modelAndView;
+    }
+
+    @ApiOperation(value = "新增用户功能" ,notes="新增用户功能")
+    @PostMapping("/add")
+    public JsonUtil add(User user,HttpSession session){
+
+        User createUser = (User) session.getAttribute("user");
+//        System.out.println(createUser);
+        //如果session为空 >> 没登陆 >> 直接返回
+        if(createUser == null){
+            return JsonUtil.ok("请登录");
+        }
+        //判断防止数据为空
+        if(user.getUname() == null || "".equals(user.getUname())){
+            return JsonUtil.ok("请输入用户名");
+        }else if (user.getAge() == null){
+            return JsonUtil.ok("请输入年龄");
+        }else if (user.getSex() == null || (user.getSex() != 0 && user.getSex() != 1)) {
+            return JsonUtil.ok("请选择性别");
+        }else if (user.getZjm() == null || "".equals(user.getZjm())) {
+            return JsonUtil.ok("请输入助记码");
+        } else if (user.getEmail() == null || "".equals(user.getEmail())) {
+            return JsonUtil.ok("请输入邮箱");
+        }
+        //判断zjm/邮箱 是否重复
+        List<User> users = userService.changeZjmAndEmail(user.getZjm(), user.getEmail());
+        if(users.size()>0){
+            for(User u:users){
+                if(user.getZjm().equals(u.getZjm())){
+                    return JsonUtil.ok("助记码已存在");
+                }else if(user.getEmail().equals(u.getEmail())){
+                    return JsonUtil.ok("邮箱已存在");
+                }
+            }
+        }
+
+        //登录了 将数据全部装入
+        user.setCreateTime(new Date(System.currentTimeMillis()));
+        User u = new User();
+        u.setUid(createUser.getUid());
+        user.setCreateUid(u);
+        //将user传入service 新增
+        Integer count = userService.addUser(user);
+        //如果大于0则新增成功
+        if(count > 0){
+            return JsonUtil.ok("创建用户成功");
+        }else{
+            return JsonUtil.ok("创建用户失败");
+        }
+    }
+
+    @ApiOperation( value = "获取用户信息", notes = "获取用户信息")
+    @GetMapping("/get")
+    public JsonUtil getUser(HttpSession session){
+        User user = (User) session.getAttribute("user");
+        //判断是否登录
+        if(user == null){
+            return JsonUtil.ok("请登录");
+        }
+        JsonUtil jsonUtil = new JsonUtil();
+        jsonUtil.put("data",user);
+        return jsonUtil;
+    }
+
+    @ApiOperation(value = "退出登录", notes = "退出登录")
+    @GetMapping("/exit")
+    public ModelAndView exit(HttpSession session){
+        session.removeAttribute("user") ;
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("redirect:/view/login.html");
+        return modelAndView;
+    }
+
     @GetMapping("/test")
     public String test(){
         return "test";
     }
 }
+
+

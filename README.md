@@ -59,6 +59,110 @@ ALTER TABLE `his`.`user`
 
 ```
 
+角色表role
+
+| 字段名      | 类型         | 备注                       |
+| ----------- | ------------ | -------------------------- |
+| rid         | bigint       | 角色id                     |
+| rname       | varchar(255) | 角色名字                   |
+| create_uid  | bigint       | 创建人id                   |
+| create_time | date         | 创建时间                   |
+| update_uid  | bigint       | 修改人id                   |
+| update_time | date         | 修改时间                   |
+| status      | int          | 角色状态 0正常 1禁用 2删除 |
+
+```mysql
+CREATE TABLE `his`.`role`(  
+  `rid` BIGINT NOT NULL AUTO_INCREMENT COMMENT '角色id',
+  `rname` VARCHAR(255) NOT NULL COMMENT '角色名字',
+  `create_uid` BIGINT COMMENT '创建人id',
+  `create_time` DATE COMMENT '创建时间',
+  `update_uid` BIGINT COMMENT '修改人id',
+  `update_time` DATE COMMENT '修改时间',
+  `status` INT COMMENT '角色状态 0正常 1禁用 2删除',
+  PRIMARY KEY (`rid`)
+);
+ALTER TABLE `his`.`role`  
+  ADD CONSTRAINT `role_user_createid` FOREIGN KEY (`create_uid`) REFERENCES `his`.`user`(`uid`),
+  ADD CONSTRAINT `role_user_updateid` FOREIGN KEY (`update_uid`) REFERENCES `his`.`user`(`uid`);
+
+
+```
+
+用户角色中间表uid_rid
+
+| 字段名 | 类型   | 备注   |
+| ------ | ------ | ------ |
+| uid    | bigint | 用户id |
+| rid    | bigint | 角色id |
+
+```mysql
+CREATE TABLE `his`.`user_role`( 
+    `uid` BIGINT NOT NULL COMMENT '用户id',
+    `rid` BIGINT NOT NULL COMMENT '角色id',
+    PRIMARY KEY (`uid`, `rid`),
+    CONSTRAINT `user_role_uid` FOREIGN KEY (`uid`) REFERENCES `his`.`user`(`uid`), 
+    CONSTRAINT `user_role_rid` FOREIGN KEY (`rid`) REFERENCES `his`.`role`(`rid`)
+); 
+
+```
+
+功能表fun
+
+| 字段名      | 类型         | 备注                         |
+| ----------- | ------------ | ---------------------------- |
+| fid         | bigint       | id                           |
+| fname       | varchar(255) | 功能名字                     |
+| type        | int          | 功能类型 0页面(超链接) 1按钮 |
+| url         | varchar(255) | 请求链接                     |
+| parent_fid  | bigint       | 父级id                       |
+| create_id   | bigint       | 创建人id                     |
+| create_date | date         | 创建时间                     |
+| update_id   | bigint       | 修改人id                     |
+| update_date | date         | 修改时间                     |
+| status      | int          | 功能状态 0正常 1禁用 2删除   |
+|             |              |                              |
+
+```mysql
+CREATE TABLE `his`.`fun`(
+    `fid` BIGINT NOT NULL COMMENT '功能id', 
+    `fname` VARCHAR(255) COMMENT '功能名字',
+    `type` INT COMMENT '功能类型', 
+    `url` VARCHAR(255) COMMENT '请求链接',
+    `parent_fid` BIGINT COMMENT '父级id', 
+    `create_id` BIGINT COMMENT '创建人id',
+    `create_date` DATE COMMENT '创建时间', 
+    `update_id` BIGINT COMMENT '修改人id',
+    `update_date` DATE COMMENT '修改时间',
+    `status` INT COMMENT '功能状态 0正常 1禁用 2删除',
+    PRIMARY KEY (`fid`),
+    CONSTRAINT `fun_user_createid` FOREIGN KEY (`create_id`) REFERENCES `his`.`user`(`uid`), 
+    CONSTRAINT `fun_user_updateid` FOREIGN KEY (`update_id`) REFERENCES `his`.`user`(`uid`) ); 
+ALTER TABLE `his`.`fun`  
+  ADD CONSTRAINT `fun_parent_fid_` FOREIGN KEY (`parent_fid`) REFERENCES `his`.`fun`(`fid`);
+
+```
+
+角色功能中间表fun_role
+
+| 字段名 | 类型   | 备注   |
+| ------ | ------ | ------ |
+| fid    | bigint | 功能id |
+| rid    | bigint | 角色id |
+
+```mysql
+CREATE TABLE `his`.`fun_role`(  
+  `fid` BIGINT NOT NULL COMMENT '功能id',
+  `rid` BIGINT NOT NULL COMMENT '角色id',
+  PRIMARY KEY (`fid`, `rid`),
+  CONSTRAINT `fun_role_fid` FOREIGN KEY (`fid`) REFERENCES `his`.`fun`(`fid`),
+  CONSTRAINT `fun_role_rid` FOREIGN KEY (`rid`) REFERENCES `his`.`role`(`rid`)
+);
+
+```
+
+
+
 ## Redis数据库
 
 ### index 0
@@ -85,7 +189,7 @@ ALTER TABLE `his`.`user`
 
 ### 功能设计
 
-前端通过ajax发送登录请求 服务器调用service将密码加密查询mysql 返回User实体对象 查询数据库时联合查询对应的创建人id和修改人id返回User实体对象 并且是懒加载模式
+前端通过ajax发送登录请求 服务器调用service将密码加密查询mysql 返回User实体对象 查询数据库时联合查询对应的创建人id和修改人id返回User实体对象
 
 ### 代码
 
@@ -371,7 +475,7 @@ public User login(String uname,String password){
     }
 ```
 
-Mapper
+**Mapper**
 
 ```java
     /**
@@ -388,4 +492,96 @@ Mapper
     @Update("UPDATE user SET password = #{password} WHERE uid = #{uid}")
     Integer UpdateUserPasswordByUid(@Param("uid") Long uid,@Param("password") String password);
 ```
+
+## 添加用户功能
+
+### 功能设计
+
+前端通过ajax发送请求服务器首先判断 是否登录.... 数据是否完整 不完整返回提示缺少什么数据 完整判断助记码和邮箱是否已存在 已存在返回xxx数据存在 不存在将数据写入sql 判断是否新增成功 大于0新增成功 小于0新增失败
+
+**Controller**
+
+```java
+@ApiOperation(value = "新增用户功能" ,notes="新增用户功能")
+    @PostMapping("/add")
+    public JsonUtil add(User user,HttpSession session){
+
+        User createUser = (User) session.getAttribute("user");
+//        System.out.println(createUser);
+        //如果session为空 >> 没登陆 >> 直接返回
+        if(createUser == null){
+            return JsonUtil.ok("请登录");
+        }
+        //判断防止数据为空
+        if(user.getUname() == null || "".equals(user.getUname())){
+            return JsonUtil.ok("请输入用户名");
+        }else if (user.getAge() == null){
+            return JsonUtil.ok("请输入年龄");
+        }else if (user.getSex() == null || (user.getSex() != 0 && user.getSex() != 1)) {
+            return JsonUtil.ok("请选择性别");
+        }else if (user.getZjm() == null || "".equals(user.getZjm())) {
+            return JsonUtil.ok("请输入助记码");
+        } else if (user.getEmail() == null || "".equals(user.getEmail())) {
+            return JsonUtil.ok("请输入邮箱");
+        }
+        //判断zjm/邮箱 是否重复
+        List<User> users = userService.changeZjmAndEmail(user.getZjm(), user.getEmail());
+        if(users.size()>0){
+            for(User u:users){
+                if(user.getZjm().equals(u.getZjm())){
+                    return JsonUtil.ok("助记码已存在");
+                }else if(user.getEmail().equals(u.getEmail())){
+                    return JsonUtil.ok("邮箱已存在");
+                }
+            }
+        }
+
+        //登录了 将数据全部装入
+        user.setCreateTime(new Date(System.currentTimeMillis()));
+        User u = new User();
+        u.setUid(createUser.getUid());
+        user.setCreateUid(u);
+        //将user传入service 新增
+        Integer count = userService.addUser(user);
+        //如果大于0则新增成功
+        if(count > 0){
+            return JsonUtil.ok("创建用户成功");
+        }else{
+            return JsonUtil.ok("创建用户失败");
+        }
+    }
+```
+
+**Service**	(创建时密码默认)
+
+```java
+ public Integer addUser(User user){
+        String password = "123456";//初始密码
+        password = SecureUtil.md5(password);
+        return userMapper.insertUser(user,password);
+    }
+```
+
+**Mapper**
+
+```java
+Select("SELECT uid,uname,age,sex,zjm,email,createTime,createUid,updateTime,updateUid,STATUS FROM USER WHERE zjm = #{zjm} OR email = #{email}")
+    List<User> findUserByZjmAndEmail(@Param("zjm") String zjm,@Param("email") String email);
+```
+
+
+
+## 获取登录用户信息
+
+### 功能设计
+
+发送请求获取session中的user数据返回
+
+
+
+## 退出登录
+
+### 功能设计
+
+将session里user删除 重定向到登录页面
 

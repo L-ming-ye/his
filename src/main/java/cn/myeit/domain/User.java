@@ -3,6 +3,7 @@ package cn.myeit.domain;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiParam;
 import io.swagger.models.auth.In;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.Date;
 
