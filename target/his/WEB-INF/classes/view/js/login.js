@@ -1,4 +1,14 @@
 $(document).ready(function(){
+	
+	$(".layui-form-switch").click(function(){
+		var status = $(".auto-login").attr("checked");
+		if(undefined == status){
+			$(".auto-login").attr("checked","checked");
+		}else{
+			$(".auto-login").removeAttr("checked");
+		}
+	})
+	
 	//判断数据是否为空
 	function checkData(){
 		var username = $("#username").val();
@@ -33,6 +43,7 @@ $(document).ready(function(){
 			var username = $("#username").val();
 			var password = $("#password").val();
 			var verify = $("#verify").val();
+			var auto = undefined==$(".auto-login").attr("checked")?false:true;
 			//检查完成开始发送请求
 			$.ajax({
 				url:"/his/user/login",
@@ -40,10 +51,15 @@ $(document).ready(function(){
 				data:{
 					"username":username,
 					"password":password,
-					"verify":verify
+					"verify":verify,
+					"auto":auto
 				},
 				success:function(e){
 					if(e.msg == "登录成功"){
+						//判断是否有flag
+						if(undefined != e.flag){
+							$.cookie("auto",e.flag,{expires:7,path:"/"});
+						}
 						//跳转页面
 						alert("登录成功");
 						window.location.replace("/his/view/user/desktop.html");

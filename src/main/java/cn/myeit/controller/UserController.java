@@ -1,9 +1,11 @@
 package cn.myeit.controller;
 
+import cn.hutool.core.codec.Base64;
 import cn.myeit.domain.User;
 import cn.myeit.util.EmailUtil;
 import cn.myeit.util.JsonUtil;
 import cn.myeit.util.AutoUtil;
+import cn.myeit.util.RedisUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.models.auth.In;
@@ -13,6 +15,9 @@ import redis.clients.jedis.Jedis;
 import redis.clients.jedis.Transaction;
 import springfox.documentation.spring.web.json.Json;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.*;
 
@@ -27,7 +32,7 @@ public class UserController extends AutoUtil{
 
     @ApiOperation(value = "用户登录",notes = "用户登录")
     @PostMapping("/login")
-    public JsonUtil login(String username, String password, String verify, HttpSession session){
+    public JsonUtil login(String username, String password, String verify, Boolean auto, HttpSession session){
         String sessionVerify = (String) session.getAttribute("verify");
         session.setAttribute("verify", null);
 
@@ -45,7 +50,24 @@ public class UserController extends AutoUtil{
             Integer status = user.getStatus();
             if(status == 0){
                 session.setAttribute("user",user);
-                return JsonUtil.ok("登录成功");
+                //判断是否有自动登录 7天过期
+                JsonUtil jsonUtil = JsonUtil.ok("登录成功");
+                if(auto){
+                    //创建一个唯一标识
+                    String uuid = UUID.randomUUID().toString().replaceAll("-","");
+                    uuid = Base64.encode(uuid + "-" + System.currentTimeMillis());
+                    //将数据写入redis里 并设置7天过期
+                    Jedis redis = redisUtil.open();
+                    redis.select(2);
+                    redis.hset(uuid,"username",username);
+                    redis.hset(uuid,"password",password);
+                    redis.expire(uuid,6048000);
+                    if(redis != null){
+                        redis.close();
+                    }
+                    jsonUtil.put("flag",uuid);
+                }
+                return jsonUtil;
             }else if(status == 1) {
                 return JsonUtil.ok("账号被封禁");
             }else{
@@ -267,11 +289,22 @@ public class UserController extends AutoUtil{
 
     @ApiOperation(value = "退出登录", notes = "退出登录")
     @GetMapping("/exit")
-    public ModelAndView exit(HttpSession session){
+    public JsonUtil exit(HttpServletRequest request){
+        Cookie[] cookies = request.getCookies();
+        for(Cookie cookie:cookies){
+            //如果有自动登录的cookie删除对应的cookie和redis
+            if("auto".equals(cookie.getName())){
+                Jedis open = redisUtil.open();
+                open.select(2);
+                open.del(cookie.getValue());
+                if(open != null){
+                    open.close();
+                }
+            }
+        }
+        HttpSession session = request.getSession();
         session.removeAttribute("user") ;
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("redirect:/view/login.html");
-        return modelAndView;
+        return JsonUtil.ok("退出成功");
     }
 
     @ApiOperation(value = "用户使用原密码的修改密码", notes = "用户使用原密码的修改密码")

@@ -21,7 +21,7 @@ $(document).ready(function(){
 			$('div[url="'+url+'"]').show().load(url);
 		}
 	});
-	
+	//查看个人信息
 	$(".my").click(function(){
 		bodyHides();
 		if($(".my-box").length>0){
@@ -32,7 +32,7 @@ $(document).ready(function(){
 			$(".my-box").show().load("/his/view/user/my.html");
 		}
 	});
-	
+	//修改密码
 	$(".change").click(function(){
 		bodyHides();
 		if($(".change-box").length>0){
@@ -43,6 +43,17 @@ $(document).ready(function(){
 			$(".change-box").show().load("/his/view/user/change.html");
 		}
 	});
+	
+	//退出
+	$(".exit").click(function(){
+		$.get("/his/user/exit",function(e){
+			if(e.msg == "退出成功"){
+				//删除cookie
+				$.cookie("auto", "", {expires: -1,path:"/"});
+				window.location.replace("/his/view/login.html");
+			}
+		})
+	})
 
 	
 	//隐藏主体的所有div

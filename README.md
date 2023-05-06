@@ -183,27 +183,206 @@ CREATE TABLE `his`.`fun_role`(
 
 ​			verifyFlag -> 是否可以发送邮箱 value-> 当前时间的时间戳
 
+### index 2
+
+​		用户存储用户自动登录的cookie对应的用户信息 
+
+​			存储的数据为set
+
+​			key->cookie的uuid
+
+​			MapKey->
+
+​				username
+
+​				password
+
+## 拦截器
+
+### 自动登录拦截器
+
+#### 功能设计
+
+判断cookie是否有自动登录的cookie 有将cookie的值取出 去redis找对应的数据 然后去登录如果登录成功将user存入session中
+
+拦截 除静态资源 和html的请求
+
+```java
+package cn.myeit.Interceptor;
+
+import cn.myeit.domain.User;
+import cn.myeit.service.UserService;
+import cn.myeit.util.RedisUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.web.servlet.HandlerInterceptor;
+import redis.clients.jedis.Jedis;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.net.URLDecoder;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
+/**
+ * 自动登录的拦截器
+ */
+public class AutoLoginInterceptor implements HandlerInterceptor {
+    @Autowired
+    RedisUtil redisUtil;
+    @Autowired
+    UserService userService;
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
+        System.out.println("自动登录拦截器");
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("user");
+        String uuid = null;
+        if(user == null){
+            //获取cookie数组
+            //遍历数组
+            Cookie[] cookies = request.getCookies();
+            for(Cookie cookie:cookies){
+                if("auto".equals(cookie.getName())){
+                    uuid = cookie.getValue();
+                    break;
+                }
+            }
+
+            if(uuid == null){
+                //没有uuid直接结束
+                return true;
+            }
+            //解码 防止cookie特殊符号
+            uuid = URLDecoder.decode(uuid);
+            //如果有uuid去redis数据库寻找
+            Jedis redis = redisUtil.open();
+            redis.select(2);
+            String username = redis.hget(uuid,"username");
+            String password = redis.hget(uuid,"password");
+            //关闭redis
+            if(redis != null){
+                redis.close();
+            }
+            //判断是否查找到了
+            if(username == null || password == null){
+                //如果为空则直接返回
+                return true;
+            }
+            user = userService.login(username,password);
+            if(user != null){
+                //登录成功了 将user存入session
+                session.setAttribute("user",user);
+            }
+        }
+        return true;
+    }
+}
+
+```
+
+### 判断是否登录
+
+#### 功能设计 
+
+用于需要登录后才可以操作的请求 判断session内是否有user 没有弹出提示框请登录 然后跳转登录界面
+
+拦截 需要登录后的所有资源
+
+```java
+package cn.myeit.Interceptor;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import cn.myeit.domain.User;
+import org.springframework.web.servlet.HandlerInterceptor;
+import org.springframework.web.servlet.ModelAndView;
+
+/**
+ * 判断是否登录的拦截器
+ */
+public class ToLoginInterceptor implements HandlerInterceptor {
+    @Override
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        System.out.println("判断登录拦截器");
+        HttpSession session = request.getSession();
+        //判断是否登录
+        User user = (User) session.getAttribute("user");
+        //没登录 跳转到登录页面 去登录
+        if(user == null){
+            response.sendRedirect("/his/toLogin");
+            return false;
+        }
+        return true;
+    }
+}
+
+```
+
+### 判断在登录页面 已经是否登录
+
+#### 功能设计
+
+当在登录页面判断session里是否有user 有的话直接跳转后台控制台
+
+拦截登录页面
+
+```java
+package cn.myeit.Interceptor;
+
+import cn.myeit.domain.User;
+import org.springframework.web.servlet.HandlerInterceptor;
+import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+public class IsLoginInterceptor implements HandlerInterceptor {
+    @Override
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        //判断是否登录
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("user");
+        if(user != null){
+            //登录了直接跳转到后台控制台
+            response.sendRedirect("/his/view/user/desktop.html");
+            return false;
+        }
+        return true;
+    }
+}
+
+```
+
 
 
 ## 用户登录功能
 
 ### 功能设计
 
-前端通过ajax发送登录请求 服务器调用service将密码加密查询mysql 返回User实体对象 查询数据库时联合查询对应的创建人id和修改人id返回User实体对象
+前端通过ajax发送登录请求 服务器调用service将密码加密查询mysql 返回User实体对象 查询数据库时联合查询对应的创建人id和修改人id返回User实体对象 并且判断是否有自动登录 有自动登录生成uuid加入cookie中设置7天过期 并且在redis中生成uuid并对应用户的账号密码
+
+注意：遇到一个问题 当设置自动登录的时候  因为加了@RespondBody注解所以返回的是json 设置cookie不生效
+
+我网上搜索了资料 不使用这个注解或返回类型改为ResponseEntity<> 但是代码已经写完了就差这一步 于是想到在前端用js存 返回json key-flag value-uuid 将uuid存入cookie
 
 ### 代码
 
 **Controller**
 
 ```java
-    @ApiOperation(value = "用户登录",notes = "用户登录")
+@ApiOperation(value = "用户登录",notes = "用户登录")
     @PostMapping("/login")
-    public JsonUtil login(String username, String password, String verify, HttpSession session){
+    public JsonUtil login(String username, String password, String verify, Boolean auto, HttpSession session){
         String sessionVerify = (String) session.getAttribute("verify");
         session.setAttribute("verify", null);
 
         //判断验证码是否正确
-        if(!verify.equals(sessionVerify)){
+        if(verify == null || sessionVerify == null || !verify.toLowerCase().equals(sessionVerify.toLowerCase())){
             return JsonUtil.error("验证码错误");
         }
         //验证码正确 查找用户信息
@@ -215,7 +394,25 @@ CREATE TABLE `his`.`fun_role`(
             //查到数据 判断用户的状态
             Integer status = user.getStatus();
             if(status == 0){
-                return JsonUtil.ok("登录成功");
+                session.setAttribute("user",user);
+                //判断是否有自动登录 7天过期
+                JsonUtil jsonUtil = JsonUtil.ok("登录成功");
+                if(auto){
+                    //创建一个唯一标识
+                    String uuid = UUID.randomUUID().toString().replaceAll("-","");
+                    uuid = Base64.encode(uuid + "-" + System.currentTimeMillis());
+                    //将数据写入redis里 并设置7天过期
+                    Jedis redis = redisUtil.open();
+                    redis.select(2);
+                    redis.hset(uuid,"username",username);
+                    redis.hset(uuid,"password",password);
+                    redis.expire(uuid,6048000);
+                    if(redis != null){
+                        redis.close();
+                    }
+                    jsonUtil.put("flag",uuid);
+                }
+                return jsonUtil;
             }else if(status == 1) {
                 return JsonUtil.ok("账号被封禁");
             }else{
@@ -583,7 +780,31 @@ Select("SELECT uid,uname,age,sex,zjm,email,createTime,createUid,updateTime,updat
 
 ### 功能设计
 
-将session里user删除 重定向到登录页面
+将session里user删除 如果有自动登录的cookie 删除对应的redis 然后前端js删除cookie
+
+```java
+@ApiOperation(value = "退出登录", notes = "退出登录")
+@GetMapping("/exit")
+public JsonUtil exit(HttpServletRequest request){
+    Cookie[] cookies = request.getCookies();
+    for(Cookie cookie:cookies){
+        //如果有自动登录的cookie删除对应的cookie和redis
+        if("auto".equals(cookie.getName())){
+            Jedis open = redisUtil.open();
+            open.select(2);
+            open.del(cookie.getValue());
+            if(open != null){
+                open.close();
+            }
+        }
+    }
+    HttpSession session = request.getSession();
+    session.removeAttribute("user") ;
+    return JsonUtil.ok("退出成功");
+}
+```
+
+
 
 ## 修改密码
 

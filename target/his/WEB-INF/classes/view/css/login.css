@@ -19,15 +19,37 @@
 	margin-top: 20px;
 }
 
-.form-label .my-input{
-	width: 80%;
+.form-label .label-title{
+	text-align: right;
+	width: 80px;
 }
 
-.verify{
-	width: 50%;
+.form-label .my-input{
+	width: 300px;
 }
+
+.verify-box{
+	width: 300px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.verify-box .verify{
+	width: 180px !important;
+}
+
 .verify-image{
-	width: 25%;
+	width: 110px;
+}
+
+.auto-box{
+	font-size: 16px;
+	margin-left: 100px;
+	margin-top: 20px;
+}
+
+.auto-box div{
+	margin: 0px;
 }
 
 .form-btn{

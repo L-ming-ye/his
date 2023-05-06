@@ -8,6 +8,8 @@
                            http://www.springframework.org/schema/beans/spring-beans.xsd
                            http://www.springframework.org/schema/context
                            http://www.springframework.org/schema/context/spring-context.xsd">
+    <import resource="springmvc-config.xml"></import>
+
     <!-- 有多个properties需要读入使用通配符*.properties -->
     <context:property-placeholder location="classpath:*.properties"/>
     <!-- service层的注解扫描 -->
