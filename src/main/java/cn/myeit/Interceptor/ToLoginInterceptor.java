@@ -13,7 +13,6 @@ import org.springframework.web.servlet.ModelAndView;
 public class ToLoginInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        System.out.println("判断登录拦截器");
         HttpSession session = request.getSession();
         //判断是否登录
         User user = (User) session.getAttribute("user");

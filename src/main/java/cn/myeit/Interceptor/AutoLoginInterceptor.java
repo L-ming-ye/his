@@ -26,7 +26,6 @@ public class AutoLoginInterceptor implements HandlerInterceptor {
     @Autowired
     UserService userService;
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
-        System.out.println("自动登录拦截器");
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
         String uuid = null;
