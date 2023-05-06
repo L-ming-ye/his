@@ -33,6 +33,10 @@
             <mvc:mapping path="/my/**"/>
             <bean class="cn.myeit.Interceptor.ToLoginInterceptor"></bean>
         </mvc:interceptor>
+<!--        <mvc:interceptor>-->
+<!--            <mvc:mapping path="/user/**"/>-->
+<!--            <bean class="cn.myeit.Interceptor.ToLoginInterceptor"></bean>-->
+<!--        </mvc:interceptor>-->
 
         <!--判断在登录页面 已经是否登录-->
         <mvc:interceptor>

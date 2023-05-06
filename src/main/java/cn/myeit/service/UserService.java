@@ -46,15 +46,38 @@ public class UserService {
         return userMapper.updateUserPasswordByUid(uid,SecureUtil.md5(password));
     }
 
-
+    /**
+     * 添加用户
+     * @param user
+     * @return
+     */
     public Integer addUser(User user){
         String password = "123456";//初始密码
         password = SecureUtil.md5(password);
         return userMapper.insertUser(user,password);
     }
 
+    /**
+     * 查找zjm或邮箱相同的
+     * @param zjm
+     * @param email
+     * @return
+     */
     public List<User> changeZjmAndEmail(String zjm,String email){
         return userMapper.findUserByZjmAndEmail(zjm,email);
     }
 
+    /**
+     * 获取用户数据总条数
+     * @return
+     */
+    public Long count(){
+        return userMapper.findCountByUser();
+    }
+
+    public List<User> getUsers(Integer page, Integer limit){
+        Integer statr = (page-1)*limit;
+        Integer end = statr + limit;
+        return userMapper.findUserByLimit(statr,end);
+    }
 }

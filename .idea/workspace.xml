@@ -9,59 +9,43 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5e71ed7-20b8-4f7c-a3b8-2422390f9377" name="Changes" comment="拦截器+自动登录">
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/myeit/controller/MyController.java" afterDir="false" />
+    <list default="true" id="f5e71ed7-20b8-4f7c-a3b8-2422390f9377" name="Changes" comment="修改项目结构">
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/myeit/domain/Users.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/myeit/Interceptor/AutoLoginInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/myeit/Interceptor/AutoLoginInterceptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/myeit/Interceptor/IsLoginInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/myeit/Interceptor/IsLoginInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/myeit/controller/OtherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/myeit/controller/OtherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/myeit/controller/ErrorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/myeit/controller/ErrorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/myeit/controller/MyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/myeit/controller/MyController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/myeit/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/myeit/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/myeit/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/myeit/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/myeit/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/myeit/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/springmvc-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/springmvc-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/css/adduser.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/css/desktop.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/css/my.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/css/userchange.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/find.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/find.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/js/desktop.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/js/find.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/js/find.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/js/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/js/my.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/js/useradd.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/js/userchange.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/js/user/add.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/js/user/add.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/user/add.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/user/change.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/user/desktop.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/user/my.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/my/change.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/my/change.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/my/user/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/my/user/add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/myeit/Interceptor/AutoLoginInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/myeit/Interceptor/AutoLoginInterceptor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/cn/myeit/Interceptor/IsLoginInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/myeit/Interceptor/IsLoginInterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/myeit/controller/OtherController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/myeit/controller/OtherController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/myeit/controller/MyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/myeit/controller/MyController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/cn/myeit/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/myeit/controller/UserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/springmvc-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springmvc-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/js/desktop.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/js/find.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/js/find.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/js/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/js/my.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/js/useradd.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/js/userchange.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/find.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/find.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/js/user/add.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/js/user/add.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/view/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/user/add.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/user/change.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/user/desktop.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/user/my.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/my/change.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/my/change.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/my/user/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/my/user/add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/Interceptor/AutoLoginInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/Interceptor/AutoLoginInterceptor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/Interceptor/IsLoginInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/Interceptor/IsLoginInterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/controller/OtherController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/controller/OtherController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/controller/MyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/controller/MyController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/controller/UserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/springmvc-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/springmvc-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/js/desktop.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/js/find.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/js/find.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/js/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/js/my.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/js/useradd.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/js/userchange.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/find.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/find.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/js/user/add.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/js/user/add.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/user/add.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/user/change.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/user/desktop.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/user/my.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/my/change.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/my/change.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/my/user/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/my/user/add.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -339,7 +323,7 @@
       <workItem from="1683306285351" duration="4077000" />
       <workItem from="1683310416227" duration="94000" />
       <workItem from="1683351348980" duration="711000" />
-      <workItem from="1683352390156" duration="24658000" />
+      <workItem from="1683352390156" duration="37081000" />
     </task>
     <task id="LOCAL-00001" summary="构建项目">
       <created>1681144545416</created>
@@ -509,7 +493,28 @@
       <option name="project" value="LOCAL" />
       <updated>1683388960314</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="修改项目结构">
+      <created>1683394081223</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1683394081223</updated>
+    </task>
+    <task id="LOCAL-00026" summary="修改项目结构">
+      <created>1683394195351</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1683394195351</updated>
+    </task>
+    <task id="LOCAL-00027" summary="修改项目结构">
+      <created>1683394347043</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1683394347043</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -550,7 +555,8 @@
     <MESSAGE value="添加用户功能 + 查看个人信息 + 退出登录" />
     <MESSAGE value="修改密码" />
     <MESSAGE value="拦截器+自动登录" />
-    <option name="LAST_COMMIT_MESSAGE" value="拦截器+自动登录" />
+    <MESSAGE value="修改项目结构" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改项目结构" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

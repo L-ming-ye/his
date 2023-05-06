@@ -33,6 +33,9 @@ public class AutoLoginInterceptor implements HandlerInterceptor {
             //获取cookie数组
             //遍历数组
             Cookie[] cookies = request.getCookies();
+            if(cookies == null){
+                return true;
+            }
             for(Cookie cookie:cookies){
                 if("auto".equals(cookie.getName())){
                     uuid = cookie.getValue();

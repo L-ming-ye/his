@@ -41,17 +41,20 @@ public class MyController extends AutoUtil{
     @GetMapping("/exit")
     public JsonUtil exit(HttpServletRequest request){
         Cookie[] cookies = request.getCookies();
-        for(Cookie cookie:cookies){
-            //如果有自动登录的cookie删除对应的cookie和redis
-            if("auto".equals(cookie.getName())){
-                Jedis open = redisUtil.open();
-                open.select(2);
-                open.del(cookie.getValue());
-                if(open != null){
-                    open.close();
+        if(cookies != null){
+            for(Cookie cookie:cookies){
+                //如果有自动登录的cookie删除对应的cookie和redis
+                if("auto".equals(cookie.getName())){
+                    Jedis open = redisUtil.open();
+                    open.select(2);
+                    open.del(cookie.getValue());
+                    if(open != null){
+                        open.close();
+                    }
                 }
             }
         }
+
         HttpSession session = request.getSession();
         session.removeAttribute("user") ;
         return JsonUtil.ok("退出成功");

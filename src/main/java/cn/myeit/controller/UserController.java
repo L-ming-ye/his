@@ -1,6 +1,7 @@
 package cn.myeit.controller;
 
 import cn.myeit.domain.User;
+import cn.myeit.domain.Users;
 import cn.myeit.util.AutoUtil;
 import cn.myeit.util.JsonUtil;
 import io.swagger.annotations.Api;
@@ -74,5 +75,43 @@ public class UserController extends AutoUtil {
         }else{
             return JsonUtil.ok("创建用户失败");
         }
+    }
+
+    @ApiOperation(value="展示用户数据页面", notes = "展示用户数据页面")
+    @GetMapping("/get")
+    public ModelAndView toGet(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("redirect:/view/my/user/data.html");
+        return modelAndView;
+    }
+
+    @ApiOperation(value = "获取用户数据",notes = "获取用户数据")
+    @PostMapping("/get")
+    public JsonUtil get(Users users){
+        //检查每页几条数据的参数是否正常
+        Integer limit = users.getLimit();
+        if(limit == null || limit <= 0){
+            //为空或小于等于0 给个默认值 5
+            limit = 5;
+        }
+        //检查页码是否正确
+        Integer page = users.getPage();
+        if(page == null || page <= 0){
+            page = 1;//默认第一页
+        }
+
+        //获取用户数据总数
+        Long count = userService.count();
+        if(count == null)count = 0L;
+
+        //将值存入users
+        //获取users
+        users.setData(userService.getUsers(page,limit));
+        users.setPage(page);
+        users.setLimit(limit);
+        users.setCount(count);
+        JsonUtil jsonUtil = JsonUtil.ok();
+        jsonUtil.put("data",users);
+        return jsonUtil;
     }
 }

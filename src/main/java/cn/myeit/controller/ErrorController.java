@@ -10,6 +10,7 @@ public class ErrorController {
     @ResponseBody
     @ExceptionHandler({Exception.class})
     public JsonUtil errorHandle(Exception e){
+        e.printStackTrace();
         System.out.println("出现异常了：" + e);
         JsonUtil error = JsonUtil.error();
         return error;

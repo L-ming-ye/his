@@ -12,6 +12,12 @@
 
 ​	数据库：mysql
 
+## api文档
+
+​	json数据:http://localhost:8080/his/v2/api-docs
+
+​	api文档:http://localhost:8080/his/view/dist/index.html
+
 ## MySQL数据库
 
 用户表 user

@@ -26,7 +26,7 @@ $(document).ready(function(){
 		var zjm = $("#zjm").val();
 		var email = $("#email").val();
 		var age = $("#age").val();
-		var sex = $('input[name="sex"]:checked').val();
+		var sex = $(".layui-form-radioed").prev().val();
 		$.ajax({
 			url:"/his/user/add",
 			method:"POST",

@@ -23,9 +23,9 @@ public interface UserMapper {
             @Result(column = "zjm", property = "zjm"),
             @Result(column = "email", property = "email"),
             @Result(column = "createTime", property = "createTime"),
-            @Result(column = "createUid", property = "createUid", one = @One(select = "cn.myeit.mapper.UserMapper.findUserByUid", fetchType = FetchType.DEFAULT)),
+            @Result(column = "createUid", property = "createUid", one = @One(select = "cn.myeit.mapper.UserMapper.findUserByUid")),
             @Result(column = "updateTime", property = "updateTime"),
-            @Result(column = "updateUid", property = "updateUid", one = @One(select = "cn.myeit.mapper.UserMapper.findUserByUid", fetchType = FetchType.DEFAULT)),
+            @Result(column = "updateUid", property = "updateUid", one = @One(select = "cn.myeit.mapper.UserMapper.findUserByUid")),
             @Result(column = "status", property = "status"),
     })
     User findUserByUsernameAndPassword(@Param("username") String username, @Param("password") String password);
@@ -69,4 +69,23 @@ public interface UserMapper {
      */
     @Select("SELECT uid,uname,age,sex,zjm,email,createTime,createUid,updateTime,updateUid,STATUS FROM USER WHERE zjm = #{zjm} OR email = #{email}")
     List<User> findUserByZjmAndEmail(@Param("zjm") String zjm,@Param("email") String email);
+
+    @Select("SELECT count(*) FROM user")
+    Long findCountByUser();
+
+    @Select("SELECT uid,uname,age,sex,zjm,email,createTime,createUid,updateTime,updateUid,status FROM USER WHERE status != 2 LIMIT ${start},${end}")
+    @Results({
+            @Result(column = "uid", property = "uid"),
+            @Result(column = "uname", property = "uname"),
+            @Result(column = "age", property = "age"),
+            @Result(column = "sex", property = "sex"),
+            @Result(column = "zjm", property = "zjm"),
+            @Result(column = "email", property = "email"),
+            @Result(column = "createTime", property = "createTime"),
+            @Result(column = "createUid", property = "createUid", one = @One(select = "cn.myeit.mapper.UserMapper.findUserByUid")),
+            @Result(column = "updateTime", property = "updateTime"),
+            @Result(column = "updateUid", property = "updateUid", one = @One(select = "cn.myeit.mapper.UserMapper.findUserByUid")),
+            @Result(column = "status", property = "status"),
+    })
+    List<User> findUserByLimit(@Param("start") int start,@Param("end") int end);
 }
