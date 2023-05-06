@@ -16,7 +16,7 @@ public class IsLoginInterceptor implements HandlerInterceptor {
         User user = (User) session.getAttribute("user");
         if(user != null){
             //登录了直接跳转到后台控制台
-            response.sendRedirect("/his/view/user/desktop.html");
+            response.sendRedirect("/his/view/my/desktop.html");
             return false;
         }
         return true;

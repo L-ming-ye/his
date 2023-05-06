@@ -9,198 +9,59 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5e71ed7-20b8-4f7c-a3b8-2422390f9377" name="Changes" comment="修改密码">
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/myeit/Interceptor/AutoLoginInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/myeit/Interceptor/IsLoginInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/myeit/Interceptor/ToLoginInterceptor.java" afterDir="false" />
+    <list default="true" id="f5e71ed7-20b8-4f7c-a3b8-2422390f9377" name="Changes" comment="拦截器+自动登录">
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/myeit/controller/MyController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/myeit/Interceptor/IsLoginInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/myeit/Interceptor/IsLoginInterceptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/myeit/controller/OtherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/myeit/controller/OtherController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/myeit/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/myeit/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/springmvc-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/springmvc-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/css/print.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/css/reset.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/css/screen.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/css/typography.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/fonts/DroidSans-Bold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/fonts/DroidSans.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/images/collapse.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/images/expand.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/images/explorer_icons.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/images/favicon-16x16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/images/favicon-32x32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/images/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/images/logo_small.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/images/pet_store_api.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/images/throbber.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/images/wordnik_api.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/lang/ca.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/lang/en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/lang/es.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/lang/fr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/lang/geo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/lang/it.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/lang/ja.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/lang/ko-kr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/lang/pl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/lang/pt.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/lang/ru.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/lang/tr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/lang/translator.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/lang/zh-cn.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/lib/backbone-min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/lib/es5-shim.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/lib/handlebars-4.0.5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/lib/highlight.9.1.0.pack.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/lib/highlight.9.1.0.pack_extended.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/lib/jquery-1.8.0.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/lib/jquery.ba-bbq.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/lib/jquery.slideto.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/lib/jquery.wiggle.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/lib/js-yaml.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/lib/jsoneditor.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/lib/lodash.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/lib/marked.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/lib/object-assign-pollyfill.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/lib/sanitize-html.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/lib/swagger-oauth.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/o2c.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/swagger-ui.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dist/swagger-ui.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/js/desktop.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/js/desktop.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/css/adduser.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/css/desktop.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/css/my.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/css/userchange.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/find.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/find.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/js/desktop.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/js/find.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/js/find.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/js/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/js/my.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/js/useradd.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/js/userchange.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/user/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/user/add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/user/desktop.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/user/desktop.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/user/add.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/user/change.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/user/desktop.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/user/my.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/myeit/Interceptor/IsLoginInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/myeit/Interceptor/IsLoginInterceptor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/cn/myeit/controller/OtherController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/myeit/controller/OtherController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/cn/myeit/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/myeit/controller/UserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/springmvc-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springmvc-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/Test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/css/print.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/css/reset.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/css/screen.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/css/typography.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/fonts/DroidSans-Bold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/fonts/DroidSans.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/images/collapse.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/images/expand.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/images/explorer_icons.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/images/favicon-16x16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/images/favicon-32x32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/images/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/images/logo_small.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/images/pet_store_api.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/images/throbber.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/images/wordnik_api.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/lang/ca.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/lang/en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/lang/es.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/lang/fr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/lang/geo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/lang/it.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/lang/ja.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/lang/ko-kr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/lang/pl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/lang/pt.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/lang/ru.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/lang/tr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/lang/translator.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/lang/zh-cn.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/lib/backbone-min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/lib/es5-shim.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/lib/handlebars-4.0.5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/lib/highlight.9.1.0.pack.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/lib/highlight.9.1.0.pack_extended.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/lib/jquery-1.8.0.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/lib/jquery.ba-bbq.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/lib/jquery.slideto.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/lib/jquery.wiggle.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/lib/js-yaml.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/lib/jsoneditor.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/lib/lodash.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/lib/marked.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/lib/object-assign-pollyfill.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/lib/sanitize-html.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/lib/swagger-oauth.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/o2c.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/swagger-ui.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dist/swagger-ui.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/js/desktop.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/js/desktop.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/js/desktop.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/js/find.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/js/find.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/view/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/js/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/js/my.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/js/useradd.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/js/userchange.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/view/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/user/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/user/add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/user/desktop.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/user/desktop.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/user/add.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/user/change.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/user/desktop.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/user/my.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/Interceptor/IsLoginInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/Interceptor/IsLoginInterceptor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/controller/OtherController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/controller/OtherController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/controller/UserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/springmvc-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/springmvc-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/test/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/test/Test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/css/print.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/css/reset.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/css/screen.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/css/typography.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/fonts/DroidSans-Bold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/fonts/DroidSans.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/images/collapse.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/images/expand.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/images/explorer_icons.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/images/favicon-16x16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/images/favicon-32x32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/images/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/images/logo_small.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/images/pet_store_api.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/images/throbber.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/images/wordnik_api.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lang/ca.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lang/en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lang/es.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lang/fr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lang/geo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lang/it.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lang/ja.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lang/ko-kr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lang/pl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lang/pt.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lang/ru.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lang/tr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lang/translator.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lang/zh-cn.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/backbone-min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/es5-shim.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/handlebars-4.0.5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/highlight.9.1.0.pack.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/highlight.9.1.0.pack_extended.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/jquery-1.8.0.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/jquery.ba-bbq.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/jquery.slideto.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/jquery.wiggle.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/js-yaml.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/jsoneditor.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/lodash.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/marked.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/object-assign-pollyfill.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/sanitize-html.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/swagger-oauth.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/o2c.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/swagger-ui.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/swagger-ui.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/js/desktop.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/js/desktop.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/js/desktop.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/js/find.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/js/find.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/js/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/js/my.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/js/useradd.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/js/userchange.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/user/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/user/add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/user/desktop.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/user/desktop.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/user/add.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/user/change.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/user/desktop.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/user/my.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -478,7 +339,7 @@
       <workItem from="1683306285351" duration="4077000" />
       <workItem from="1683310416227" duration="94000" />
       <workItem from="1683351348980" duration="711000" />
-      <workItem from="1683352390156" duration="20668000" />
+      <workItem from="1683352390156" duration="24658000" />
     </task>
     <task id="LOCAL-00001" summary="构建项目">
       <created>1681144545416</created>
@@ -627,7 +488,28 @@
       <option name="project" value="LOCAL" />
       <updated>1683310499186</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="拦截器+自动登录">
+      <created>1683388877790</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1683388877790</updated>
+    </task>
+    <task id="LOCAL-00023" summary="拦截器+自动登录">
+      <created>1683388942350</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1683388942350</updated>
+    </task>
+    <task id="LOCAL-00024" summary="拦截器+自动登录">
+      <created>1683388960314</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1683388960314</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -667,7 +549,8 @@
     <MESSAGE value="找回密码功能" />
     <MESSAGE value="添加用户功能 + 查看个人信息 + 退出登录" />
     <MESSAGE value="修改密码" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改密码" />
+    <MESSAGE value="拦截器+自动登录" />
+    <option name="LAST_COMMIT_MESSAGE" value="拦截器+自动登录" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

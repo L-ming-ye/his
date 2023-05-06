@@ -46,7 +46,7 @@ $(document).ready(function(){
 			var auto = undefined==$(".auto-login").attr("checked")?false:true;
 			//检查完成开始发送请求
 			$.ajax({
-				url:"/his/user/login",
+				url:"/his/login",
 				method:"POST",
 				data:{
 					"username":username,
@@ -62,7 +62,7 @@ $(document).ready(function(){
 						}
 						//跳转页面
 						alert("登录成功");
-						window.location.replace("/his/view/user/desktop.html");
+						window.location.replace("/his/view/my/desktop.html");
 					}else{
 						//登录失败 将内容展示出来
 						var checkText = $("#check-text");

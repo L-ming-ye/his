@@ -26,14 +26,11 @@
         
         <!--判断是否登录拦截器-->
         <mvc:interceptor>
-            <mvc:mapping path="/view/user/**"/>
+            <mvc:mapping path="/view/my/**"/>
             <bean class="cn.myeit.Interceptor.ToLoginInterceptor"></bean>
         </mvc:interceptor>
         <mvc:interceptor>
-            <mvc:mapping path="/user/**"/>
-            <mvc:exclude-mapping path="/user/find"/>
-            <mvc:exclude-mapping path="/user/change"/>
-            <mvc:exclude-mapping path="/user/login"/>
+            <mvc:mapping path="/my/**"/>
             <bean class="cn.myeit.Interceptor.ToLoginInterceptor"></bean>
         </mvc:interceptor>
 

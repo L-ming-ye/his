@@ -44,7 +44,7 @@ $(document).ready(function(){
 			var checkPassword = $("#check-password").val();
 			var verify = $("#verify").val();
 			$.ajax({
-				url:"/his/user/change",
+				url:"/his/change",
 				method:"POST",
 				data:{
 					"username":username,
@@ -82,7 +82,7 @@ $(document).ready(function(){
 			$(".check").hide();
 			//发送ajax给服务器发送返回密码的邮件
 			$.ajax({
-				url:"/his/user/find",
+				url:"/his/find",
 				method:"POST",
 				data:{
 					"username":username
