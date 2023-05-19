@@ -88,4 +88,24 @@ public interface UserMapper {
             @Result(column = "status", property = "status"),
     })
     List<User> findUserByLimit(@Param("start") int start,@Param("end") int end);
+
+    @Select("<script>" +
+            "select * from user where 1=1" +
+
+                "<if test='(user != null and a>0 and b>a)'>" +
+                    " AND (uname = #{user})" +
+                "</if>" +
+
+            "</script>")
+    List<User> findUsers(@Param("user") String user,@Param("a") Integer a,@Param("b") Integer b);
+
+    @Update("<script>" +
+            "UPDATE `user` SET " +
+                "uname=#{user.uname}, age=#{user.age}, sex=#{user.sex}, zjm=#{user.zjm}, email=#{user.email}, status = #{user.status},updateUid=#{user.updateUid.uid},updateTime=#{user.updateTime}" +
+                "<if test='password != null'>" +
+                    ", password=#{password}" +
+                "</if>" +
+            "WHERE uid = #{user.uid};" +
+            "</script>")
+    Integer changeUser(@Param("user") User user,@Param("password") String password);
 }

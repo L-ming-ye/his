@@ -1,11 +1,10 @@
 package cn.myeit.service;
 
 import cn.hutool.crypto.SecureUtil;
-import cn.hutool.crypto.digest.MD5;
+import cn.hutool.crypto.digest.DigestUtil;
 import cn.myeit.domain.User;
 import cn.myeit.mapper.UserMapper;
 import org.springframework.stereotype.Service;
-import sun.security.krb5.internal.PAData;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -63,7 +62,7 @@ public class UserService {
      * @param email
      * @return
      */
-    public List<User> changeZjmAndEmail(String zjm,String email){
+    public List<User> findjmAndEmail(String zjm,String email){
         return userMapper.findUserByZjmAndEmail(zjm,email);
     }
 
@@ -79,5 +78,20 @@ public class UserService {
         Integer statr = (page-1)*limit;
         Integer end = statr + limit;
         return userMapper.findUserByLimit(statr,end);
+    }
+
+    public List<User> users(String user){
+        return userMapper.findUsers(user,1,2);
+    }
+
+    public Integer changeUser(User user,String password){
+        //如果password为"" 直接变成null 为后续更好的做动态sql修改密码
+        if (password != null && "".equals(password)){
+            password = null;
+        }else{
+            //密码不为空加密
+            password = SecureUtil.md5(password);
+        }
+        return userMapper.changeUser(user,password);
     }
 }

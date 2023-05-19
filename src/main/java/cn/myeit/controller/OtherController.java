@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -236,4 +237,10 @@ public class OtherController extends AutoUtil {
         response.getWriter().println(result);
     }
 
+    @GetMapping("/test")
+    @ResponseBody
+    public List<User> test(String user){
+        System.out.println(user);
+        return userService.users(user);
+    }
 }

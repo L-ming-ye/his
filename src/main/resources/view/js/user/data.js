@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	
 	//格式化时间
 	function formatTime(time){
 		if(undefined == time || null == time){
@@ -21,7 +22,6 @@ $(document).ready(function(){
 	
 	layui.use('table', function(){
 	  var table = layui.table;
-	 
 	  //第一个实例
 	  table.render({
 		elem: '#user-data'
@@ -44,25 +44,30 @@ $(document).ready(function(){
 			groups:1,
 		}
 		,cols: [[ //表头
-		  {field: 'uid', title: 'ID', minWidth:20}
-		  ,{field: 'uname', title: '用户名', minwidth:80}
-		  ,{field: 'zjm', title: '助记码', minwidth:80,}
-		  ,{field: 'age', title: '年龄', minwidth:80,}
-		  ,{field: 'sex', title: '性别', minwidth:80,templet:
+		  {type: 'checkbox',field:'uid',templet:
+			function(d){
+				var value = "<div stytle='display:none'>"+d.uid+"<div>";
+				return value;
+			}
+		  }
+		  ,{field: 'uname', title: '用户名', width:80}
+		  ,{field: 'zjm', title: '助记码', width:80,}
+		  ,{field: 'age', title: '年龄', width:60,}
+		  ,{field: 'sex', title: '性别', width:60,templet:
 			  function(d){
 				  var sex = d.sex==0?'男':d.sex==1?'女':'未知';
 				  return sex;
 			  },
 		  }
 		  ,{field: 'email', title: '邮箱', minwidth:80,}
-		  ,{field: 'password', title: '密码', minwidth:80,templet:'<div>*************<div>'}
+		  ,{field: 'password', title: '密码', width:80,templet:'<div>******<div>'}
 		  ,{field: 'createTime', title: '创建时间', minwidth:80,templet:
 			function(d){
 				var time = formatTime(d.createTime);
 				return time==null?'无':time;
 			}
 		  }
-		  ,{field: 'createUid', title: '创建人', minwidth:80,templet:
+		  ,{field: 'createUid', title: '创建人', width:80,templet:
 			function(d){
 				return d.createUid==null?'无':d.createUid.uname==null?'无':d.createUid.uname;
 			}
@@ -73,24 +78,20 @@ $(document).ready(function(){
 				return time==null?'无':time;
 			}
 		  }
-		  ,{field: 'updateUid', title: '创建人', minwidth:80,templet:
+		  ,{field: 'updateUid', title: '修改人', width:80,templet:
 			function(d){
 				return d.updateUid==null?'无':d.updateUid.uname==null?'无':d.updateUid.uname;
 			}
 		  }
-		  ,{field: 'status', title: '状态', minwidth:80,templet:
+		  ,{field: 'status', title: '状态', width:60,templet:
 			function(d){
-				var selectHtml = '<div class="layui-form"><input type="checkbox" name="status" lay-text="启用|禁用" lay-filter="status-filter" lay-skin="switch" '+(d.status==0?"checked":'')+'></div>'
-				return selectHtml;
+				var status = d.status == 0?"正常":d.status==1?"禁用":"异常";
+				return status;
 			}
-		  }
-		  ,{field:"del",title:"操作",minWidth:80,templet:
-			function(d){
-				return '<button type="button" class="layui-btn layui-btn-sm layui-btn-danger"><i class="layui-icon layui-icon-delete"></i> 删除</button>'
-			}
-		  }
+		  },
+		  ,{title:"操作",width:153,templet:'#operate-box'}
 		]]
 	  });
-	  
 	});
+
 })

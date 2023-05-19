@@ -6,10 +6,7 @@ import cn.myeit.util.AutoUtil;
 import cn.myeit.util.JsonUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
@@ -51,7 +48,7 @@ public class UserController extends AutoUtil {
             return JsonUtil.ok("请输入邮箱");
         }
         //判断zjm/邮箱 是否重复
-        List<User> users = userService.changeZjmAndEmail(user.getZjm(), user.getEmail());
+        List<User> users = userService.findjmAndEmail(user.getZjm(), user.getEmail());
         if(users.size()>0){
             for(User u:users){
                 if(user.getZjm().equals(u.getZjm())){
@@ -85,6 +82,8 @@ public class UserController extends AutoUtil {
         return modelAndView;
     }
 
+
+
     @ApiOperation(value = "获取用户数据",notes = "获取用户数据")
     @PostMapping("/get")
     public JsonUtil get(Users users){
@@ -103,7 +102,7 @@ public class UserController extends AutoUtil {
         //获取用户数据总数
         Long count = userService.count();
         if(count == null)count = 0L;
-
+ 
         //将值存入users
         //获取users
         users.setData(userService.getUsers(page,limit));
@@ -113,5 +112,32 @@ public class UserController extends AutoUtil {
         JsonUtil jsonUtil = JsonUtil.ok();
         jsonUtil.put("data",users);
         return jsonUtil;
+    }
+
+    @ApiOperation(value = "修改用户信息",notes = "修改用户信息")
+    @PostMapping("/change")
+    public JsonUtil change(User user ,String password,@SessionAttribute("user") User updateUser){
+        //重新修改一下用户的修改人为发送请求的人 修改时间为当前时间
+        user.setUpdateUid(updateUser);
+        user.setUpdateTime(new Date(System.currentTimeMillis()));
+        //判断zjm/邮箱 是否重复
+        List<User> users = userService.findjmAndEmail(user.getZjm(), user.getEmail());
+        if(users.size()>0){
+            for(User u:users){
+                if(user.getZjm().equals(u.getZjm())){
+                    return JsonUtil.ok("助记码已存在");
+                }else if(user.getEmail().equals(u.getEmail())){
+                    return JsonUtil.ok("邮箱已存在");
+                }
+            }
+        }
+        //获取到 user 和 password 修改用户信息
+        Integer count = userService.changeUser(user, password);
+        if(count == 1){
+            //修改成功
+            return JsonUtil.ok("修改成功");
+        }else{
+            return JsonUtil.ok("修改失败");
+        }
     }
 }

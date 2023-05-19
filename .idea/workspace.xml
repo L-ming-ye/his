@@ -9,175 +9,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5e71ed7-20b8-4f7c-a3b8-2422390f9377" name="Changes" comment="用户数据展示">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/css/user/data.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/css/print.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/css/reset.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/css/screen.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/css/typography.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/fonts/DroidSans-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/fonts/DroidSans.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/images/collapse.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/images/expand.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/images/explorer_icons.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/images/favicon-16x16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/images/favicon-32x32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/images/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/images/logo_small.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/images/pet_store_api.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/images/throbber.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/images/wordnik_api.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/lang/ca.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/lang/en.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/lang/es.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/lang/fr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/lang/geo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/lang/it.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/lang/ja.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/lang/ko-kr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/lang/pl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/lang/pt.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/lang/ru.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/lang/tr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/lang/translator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/lang/zh-cn.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/lib/backbone-min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/lib/es5-shim.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/lib/handlebars-4.0.5.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/lib/highlight.9.1.0.pack.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/lib/highlight.9.1.0.pack_extended.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/lib/jquery-1.8.0.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/lib/jquery.ba-bbq.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/lib/jquery.slideto.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/lib/jquery.wiggle.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/lib/js-yaml.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/lib/jsoneditor.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/lib/lodash.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/lib/marked.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/lib/object-assign-pollyfill.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/lib/sanitize-html.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/lib/swagger-oauth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/o2c.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/swagger-ui.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/dist/swagger-ui.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/js/user/data.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/my/user/data.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/css/user/data.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/css/print.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/css/reset.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/css/screen.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/css/typography.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/fonts/DroidSans-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/fonts/DroidSans.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/images/collapse.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/images/expand.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/images/explorer_icons.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/images/favicon-16x16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/images/favicon-32x32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/images/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/images/logo_small.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/images/pet_store_api.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/images/throbber.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/images/wordnik_api.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/lang/ca.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/lang/en.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/lang/es.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/lang/fr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/lang/geo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/lang/it.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/lang/ja.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/lang/ko-kr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/lang/pl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/lang/pt.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/lang/ru.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/lang/tr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/lang/translator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/lang/zh-cn.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/lib/backbone-min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/lib/es5-shim.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/lib/handlebars-4.0.5.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/lib/highlight.9.1.0.pack.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/lib/highlight.9.1.0.pack_extended.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/lib/jquery-1.8.0.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/lib/jquery.ba-bbq.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/lib/jquery.slideto.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/lib/jquery.wiggle.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/lib/js-yaml.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/lib/jsoneditor.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/lib/lodash.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/lib/marked.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/lib/object-assign-pollyfill.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/lib/sanitize-html.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/lib/swagger-oauth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/o2c.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/swagger-ui.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/dist/swagger-ui.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/js/user/data.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/view/my/user/data.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/css/user/data.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/css/print.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/css/reset.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/css/screen.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/css/typography.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/fonts/DroidSans-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/fonts/DroidSans.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/images/collapse.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/images/expand.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/images/explorer_icons.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/images/favicon-16x16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/images/favicon-32x32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/images/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/images/logo_small.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/images/pet_store_api.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/images/throbber.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/images/wordnik_api.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lang/ca.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lang/en.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lang/es.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lang/fr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lang/geo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lang/it.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lang/ja.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lang/ko-kr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lang/pl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lang/pt.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lang/ru.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lang/tr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lang/translator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lang/zh-cn.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/backbone-min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/es5-shim.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/handlebars-4.0.5.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/highlight.9.1.0.pack.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/highlight.9.1.0.pack_extended.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/jquery-1.8.0.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/jquery.ba-bbq.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/jquery.slideto.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/jquery.wiggle.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/js-yaml.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/jsoneditor.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/lodash.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/marked.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/object-assign-pollyfill.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/sanitize-html.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/swagger-oauth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/o2c.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/swagger-ui.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/swagger-ui.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/js/user/data.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/my/user/data.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/myeit/controller/ErrorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/myeit/controller/ErrorController.class" afterDir="false" />
+    <list default="true" id="f5e71ed7-20b8-4f7c-a3b8-2422390f9377" name="Changes" comment="用户数据修改">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/myeit/Interceptor/AutoLoginInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/myeit/Interceptor/AutoLoginInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/myeit/controller/OtherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/myeit/controller/OtherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/myeit/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/myeit/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/myeit/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/myeit/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/myeit/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/myeit/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/css/user/data.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/css/user/data.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/js/user/data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/js/user/data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/my/user/data.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/my/user/data.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/myeit/Interceptor/AutoLoginInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/myeit/Interceptor/AutoLoginInterceptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/myeit/controller/OtherController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/myeit/controller/OtherController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/myeit/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/myeit/controller/UserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/cn/myeit/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/myeit/mapper/UserMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/cn/myeit/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/myeit/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/controller/ErrorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/controller/ErrorController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/css/user/data.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/css/user/data.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/js/user/data.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/js/user/data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/my/user/data.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/my/user/data.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/Interceptor/AutoLoginInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/Interceptor/AutoLoginInterceptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/controller/OtherController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/controller/OtherController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/controller/UserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/mapper/UserMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/css/user/data.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/css/user/data.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/js/user/data.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/js/user/data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/my/user/data.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/my/user/data.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,28 +99,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "E:/Project/his/server/src/main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "File.Encoding",
-    "spring.configuration.checksum": "65b50b04a6af50bb2f174db30a8c6dad",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mingye/Desktop/t/5/源项目/library-system-master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;工件&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;65b50b04a6af50bb2f174db30a8c6dad&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="Push.Settings">
     <force-push-targets>
       <force-push-target remote-path="his" branch="main" />
@@ -317,7 +174,7 @@
     <configuration name="Tomcat 9.0.65" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.65" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8" nameIsGenerated="true">
       <option name="OPEN_IN_BROWSER" value="false" />
       <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
-      <option name="COMMON_VM_ARGUMENTS" value="-Dfile.encofing=utf-8" />
+      <option name="COMMON_VM_ARGUMENTS" value="-Dfile.encoding=utf-8" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATING_POLICY" value="redeploy-artifacts" />
@@ -455,7 +312,21 @@
       <workItem from="1683306285351" duration="4077000" />
       <workItem from="1683310416227" duration="94000" />
       <workItem from="1683351348980" duration="711000" />
-      <workItem from="1683352390156" duration="37559000" />
+      <workItem from="1683352390156" duration="37751000" />
+      <workItem from="1683470743227" duration="377000" />
+      <workItem from="1683536606693" duration="7401000" />
+      <workItem from="1683632788717" duration="2795000" />
+      <workItem from="1683650663875" duration="704000" />
+      <workItem from="1683661577127" duration="3073000" />
+      <workItem from="1683666844007" duration="18000" />
+      <workItem from="1683731936235" duration="3140000" />
+      <workItem from="1683773714182" duration="480000" />
+      <workItem from="1683967433211" duration="628000" />
+      <workItem from="1684140190975" duration="1189000" />
+      <workItem from="1684242515928" duration="12317000" />
+      <workItem from="1684331408830" duration="11788000" />
+      <workItem from="1684347953786" duration="3000" />
+      <workItem from="1684504866618" duration="1232000" />
     </task>
     <task id="LOCAL-00001" summary="构建项目">
       <created>1681144545416</created>
@@ -653,7 +524,21 @@
       <option name="project" value="LOCAL" />
       <updated>1683408468335</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="用户数据展示">
+      <created>1683408781043</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1683408781043</updated>
+    </task>
+    <task id="LOCAL-00030" summary="用户数据展示">
+      <created>1683408803842</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1683408803842</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -696,7 +581,8 @@
     <MESSAGE value="拦截器+自动登录" />
     <MESSAGE value="修改项目结构" />
     <MESSAGE value="用户数据展示" />
-    <option name="LAST_COMMIT_MESSAGE" value="用户数据展示" />
+    <MESSAGE value="用户数据修改" />
+    <option name="LAST_COMMIT_MESSAGE" value="用户数据修改" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
