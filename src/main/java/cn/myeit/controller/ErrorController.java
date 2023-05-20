@@ -1,7 +1,7 @@
 package cn.myeit.controller;
 
 
-import cn.myeit.util.JsonUtil;
+import cn.myeit.util.SendUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.*;
 public class ErrorController {
     @ResponseBody
     @ExceptionHandler({Exception.class})
-    public JsonUtil errorHandle(Exception e){
+    public SendUtil errorHandle(Exception e){
         e.printStackTrace();
         System.out.println("出现异常了：" + e);
-        JsonUtil error = JsonUtil.error();
+        SendUtil error = SendUtil.error();
         return error;
     }
 

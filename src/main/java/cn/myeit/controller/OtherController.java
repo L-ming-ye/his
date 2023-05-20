@@ -4,7 +4,7 @@ import cn.hutool.core.codec.Base64;
 import cn.myeit.domain.User;
 import cn.myeit.util.AutoUtil;
 import cn.myeit.util.EmailUtil;
-import cn.myeit.util.JsonUtil;
+import cn.myeit.util.SendUtil;
 import cn.myeit.util.VerifyUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -35,19 +35,19 @@ public class OtherController extends AutoUtil {
     @ApiOperation(value = "用户找回密码",notes = "用户找回密码发送邮件")
     @PostMapping("/find")
     @ResponseBody
-    public JsonUtil find(String username){
+    public SendUtil find(String username){
         User user = userService.findUsers(username);
         //判断是否查询到用户
         if(user == null){
             //没有数据
-            return JsonUtil.ok("没有找到这个用户");
+            return SendUtil.ok("没有找到这个用户");
         }else{
             //查到数据 判断用户的状态
             Integer status = user.getStatus();
             if(status == 0){
                 //状态正常 判断用户是否有邮箱
                 if(user.getEmail() == null){
-                    return JsonUtil.ok("用户没有绑定邮箱");
+                    return SendUtil.ok("用户没有绑定邮箱");
                 }else {
                     //绑定了邮箱 判断一分钟内是否有发送 如果有返回发送频繁
                     Jedis jedis = null;
@@ -74,7 +74,7 @@ public class OtherController extends AutoUtil {
                         //查询上一次请求的时间判断是否是一分钟内发送
                         if(time >= 1740){
                             //超时 一分钟内发送多次
-                            return JsonUtil.ok("请求频繁");
+                            return SendUtil.ok("请求频繁");
                         }
                         // 都没问题 发送邮箱
                         //生成验证码
@@ -85,10 +85,10 @@ public class OtherController extends AutoUtil {
                         //有效时间30分钟
                         jedis.expire(user.getEmail(),1800);
                         EmailUtil.send(user.getEmail(),"找回密码","<h2>你的验证码为：<font color=\"#ff0000\" style=\"border-bottom:3px solid #f00\">"+verifyCode+"</font> 有效时间为30分钟  </h2>",true);
-                        return JsonUtil.ok("发送成功");
+                        return SendUtil.ok("发送成功");
                     }catch (Exception e){
                         //发送邮件失败
-                        return JsonUtil.ok("发送邮件失败");
+                        return SendUtil.ok("发送邮件失败");
                     }finally {
                         jedis.select(1);
                         if(flag != null && flag.equals(jedis.get("verifyFlag"))){
@@ -103,9 +103,9 @@ public class OtherController extends AutoUtil {
                     }
                 }
             }else if(status == 1) {
-                return JsonUtil.ok("账号被封禁");
+                return SendUtil.ok("账号被封禁");
             }else{
-                return JsonUtil.ok("用户状态异常");
+                return SendUtil.ok("用户状态异常");
             }
         }
     }
@@ -113,10 +113,10 @@ public class OtherController extends AutoUtil {
     @ApiOperation(value = "找回密码的修改密码",notes = "找回密码的修改密码")
     @PostMapping("/change")
     @ResponseBody
-    public JsonUtil change(String username, String password, String checkPassword, String verify){
+    public SendUtil change(String username, String password, String checkPassword, String verify){
         //判断两次密码是否不一致
         if(password == null || !password.equals(checkPassword)){
-            return JsonUtil.ok("两次密码不一致");
+            return SendUtil.ok("两次密码不一致");
         }
         Jedis jedis = null;
         try{
@@ -125,14 +125,14 @@ public class OtherController extends AutoUtil {
             //判断是否查询到用户
             if(user == null){
                 //没有数据
-                return JsonUtil.ok("没有找到这个用户");
+                return SendUtil.ok("没有找到这个用户");
             }else {
                 //查到数据 判断用户的状态
                 Integer status = user.getStatus();
                 if (status == 0) {
                     //状态正常 判断用户是否有邮箱
                     if(user.getEmail() == null){
-                        return JsonUtil.ok("用户没有绑定邮箱");
+                        return SendUtil.ok("用户没有绑定邮箱");
                     }else {
                         //打开reids 查询邮箱对应的数据
                         jedis = redisUtil.open();
@@ -140,14 +140,14 @@ public class OtherController extends AutoUtil {
                         Map<String, String> userVerifyData = jedis.hgetAll(user.getEmail());
                         if(userVerifyData == null){
                             //该用户的数据是空的 （可能过期了 也可能压根没有数据）返回验证码错误 让用户重新获取一遍
-                            return JsonUtil.ok("验证码错误");
+                            return SendUtil.ok("验证码错误");
                         }
                         //有这个用户的数据
                         String verifyCode = userVerifyData.get("verifyCode");
                         //判断传入进来的验证码 和 redis数据库里的验证码是否对应
                         if(verifyCode == null || verify ==null || !verifyCode.toLowerCase().equals(verify.toLowerCase())){
                             //不对应 验证码不正确
-                            return JsonUtil.ok("验证码错误");
+                            return SendUtil.ok("验证码错误");
                         }
                         //验证码正确 根据redis对应的uid修改密码
                         Long uid = new Long(userVerifyData.get("uid"));
@@ -155,19 +155,19 @@ public class OtherController extends AutoUtil {
                         if(i == 1){
                             //修改成功后删除用户在redis验证码的信息
                             jedis.del(user.getEmail());
-                            return JsonUtil.ok("修改成功");
+                            return SendUtil.ok("修改成功");
                         }else{
-                            return JsonUtil.ok("修改失败");
+                            return SendUtil.ok("修改失败");
                         }
                     }
                 } else if (status == 1) {
-                    return JsonUtil.ok("账号被封禁");
+                    return SendUtil.ok("账号被封禁");
                 } else {
-                    return JsonUtil.ok("用户状态异常");
+                    return SendUtil.ok("用户状态异常");
                 }
             }
         }catch (Exception e){
-            return JsonUtil.error();
+            return SendUtil.error();
         }finally {
             if(jedis != null){
                 jedis.close();
@@ -178,26 +178,26 @@ public class OtherController extends AutoUtil {
     @ApiOperation(value = "用户登录",notes = "用户登录")
     @PostMapping("/login")
     @ResponseBody
-    public JsonUtil login(String username, String password, String verify, Boolean auto, HttpSession session){
+    public SendUtil login(String username, String password, String verify, Boolean auto, HttpSession session){
         String sessionVerify = (String) session.getAttribute("verify");
         session.setAttribute("verify", null);
 
         //判断验证码是否正确
         if(verify == null || sessionVerify == null || !verify.toLowerCase().equals(sessionVerify.toLowerCase())){
-            return JsonUtil.error("验证码错误");
+            return SendUtil.error("验证码错误");
         }
         //验证码正确 查找用户信息
         User user = userService.login(username,password);
         if(user == null){
             //没有查到数据 账号或密码错误
-            return JsonUtil.ok("账号或密码错误");
+            return SendUtil.ok("账号或密码错误");
         }else{
             //查到数据 判断用户的状态
             Integer status = user.getStatus();
             if(status == 0){
                 session.setAttribute("user",user);
                 //判断是否有自动登录 7天过期
-                JsonUtil jsonUtil = JsonUtil.ok("登录成功");
+                SendUtil sendUtil = SendUtil.ok("登录成功");
                 if(auto){
                     //创建一个唯一标识
                     String uuid = UUID.randomUUID().toString().replaceAll("-","");
@@ -211,13 +211,13 @@ public class OtherController extends AutoUtil {
                     if(redis != null){
                         redis.close();
                     }
-                    jsonUtil.put("flag",uuid);
+                    sendUtil.put("flag",uuid);
                 }
-                return jsonUtil;
+                return sendUtil;
             }else if(status == 1) {
-                return JsonUtil.ok("账号被封禁");
+                return SendUtil.ok("账号被封禁");
             }else{
-                return JsonUtil.ok("用户状态异常");
+                return SendUtil.ok("用户状态异常");
             }
         }
     }

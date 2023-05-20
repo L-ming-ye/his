@@ -103,7 +103,7 @@
 		<script>
 			var statusValue = 0;
 			var sexValue = 0;
-			
+			//监听选择性别按钮 和 状态开关
 			layui.use(function(){
 				var form = layui.form;
 				var layer = layui.layer;
@@ -204,12 +204,57 @@
 
 			//删除的方法
 			function del(e){
-				console.log("删除");
+				//指定删除一个
+				// 获取到uid
+				var tr = $(e).parent().parent().parent();//获取tr标签
+				var uid = Number(tr.children("[data-field='uid']").attr("data-content"));
+				
+				$.post({
+					url:"/his/user/del",
+					contentType: 'application/json',
+					data:JSON.stringify([uid]),
+					success:function(e){
+						alert(e.msg);
+						if(e.msg=="删除成功"){
+							//如果删除成功重新渲染表格
+							var table = layui.table;
+							table.reload('user-data');
+						}
+					}
+				})
+			}
+		
+			//删除所有选中的
+			function delAll(){
+				var table = layui.table;
+				// 获取选中的行数据
+				var checkStatus = table.checkStatus('user-data');
+				var data = checkStatus.data;
+				//循环遍历获取每一个数据对象的uid
+				var array = [];
+				for(index in data){
+					array.push(data[index].uid)
+				}
+				$.post({
+					url:"/his/user/del",
+					contentType: 'application/json',
+					data:JSON.stringify(array),
+					success:function(e){
+						alert(e.msg);
+						if(e.msg=="删除成功"){
+							//如果删除成功重新渲染表格
+							var table = layui.table;
+							table.reload('user-data');
+						}
+					}
+				})
+				
+
 			}
 		</script>
 		
 		<div class="table-tool">	
-			<button type="button" class="layui-btn layui-btn-sm layui-btn-danger" id="del-all">
+			<button type="button" class="layui-btn layui-btn-sm layui-btn-danger" onclick="delAll()">
 			    <i class="layui-icon layui-icon-delete"></i> 删除
 			</button>
 		</div>

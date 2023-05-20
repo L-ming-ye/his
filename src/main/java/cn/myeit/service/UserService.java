@@ -4,7 +4,11 @@ import cn.hutool.crypto.SecureUtil;
 import cn.hutool.crypto.digest.DigestUtil;
 import cn.myeit.domain.User;
 import cn.myeit.mapper.UserMapper;
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.interceptor.TransactionAspectSupport;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -93,5 +97,17 @@ public class UserService {
             password = SecureUtil.md5(password);
         }
         return userMapper.changeUser(user,password);
+    }
+
+    @Transactional(rollbackFor = Exception.class)
+    public Long del(List<Long> uidBox){
+        Long del = userMapper.del(uidBox);
+        if(del != uidBox.size()){
+            //数量不同 回滚返回-1
+            throw new RuntimeException("删除失败");
+        }else{
+            //一样删除成功 返回数量
+            return del;
+        }
     }
 }

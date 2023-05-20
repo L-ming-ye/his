@@ -70,7 +70,7 @@ public interface UserMapper {
     @Select("SELECT uid,uname,age,sex,zjm,email,createTime,createUid,updateTime,updateUid,STATUS FROM USER WHERE zjm = #{zjm} OR email = #{email}")
     List<User> findUserByZjmAndEmail(@Param("zjm") String zjm,@Param("email") String email);
 
-    @Select("SELECT count(*) FROM user")
+    @Select("SELECT count(*) FROM user WHERE status IN (0,1 )")
     Long findCountByUser();
 
     @Select("SELECT uid,uname,age,sex,zjm,email,createTime,createUid,updateTime,updateUid,status FROM USER WHERE status != 2 LIMIT ${start},${end}")
@@ -108,4 +108,12 @@ public interface UserMapper {
             "WHERE uid = #{user.uid};" +
             "</script>")
     Integer changeUser(@Param("user") User user,@Param("password") String password);
+
+    @Update("<script>" +
+                "UPDATE `user` SET STATUS = 2 WHERE uid IN " +
+                "<foreach collection='uidBox' item='item' open='(' separator=',' close=')'>" +
+                    "#{item}" +
+                "</foreach>" +
+            "</script>")
+    Long del(@Param("uidBox") List uidBox);
 }

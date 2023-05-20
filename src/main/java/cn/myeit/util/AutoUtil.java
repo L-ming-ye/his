@@ -1,5 +1,7 @@
 package cn.myeit.util;
 
+import cn.myeit.domain.Role;
+import cn.myeit.service.RoleService;
 import cn.myeit.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -15,4 +17,7 @@ public class AutoUtil {
 
     @Autowired
     public RedisUtil redisUtil;
+
+    @Autowired
+    public RoleService roleService;
 }
