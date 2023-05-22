@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
 Created-By: IntelliJ IDEA
 Built-By: mingye
-Build-Jdk: Oracle OpenJDK version 1.8.0_351
+Build-Jdk: Amazon Corretto version 11.0.19
 
