@@ -10,7 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6dca05fd-9a75-4c0c-ada9-7fa1c433feba" name="变更" comment="查看角色信息">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/his_war2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/his_war.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/his_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/his_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/my/role/data.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/my/role/data.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/cn/myeit/Interceptor/AutoLoginInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/myeit/Interceptor/AutoLoginInterceptor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/cn/myeit/Interceptor/IsLoginInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/myeit/Interceptor/IsLoginInterceptor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/cn/myeit/Interceptor/ToLoginInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/myeit/Interceptor/ToLoginInterceptor.class" afterDir="false" />
@@ -20,21 +25,187 @@
       <change beforePath="$PROJECT_DIR$/target/classes/cn/myeit/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/myeit/controller/UserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/cn/myeit/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/myeit/service/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/cn/myeit/util/VerifyUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/myeit/util/VerifyUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/Interceptor/AutoLoginInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/Interceptor/AutoLoginInterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/Interceptor/IsLoginInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/Interceptor/IsLoginInterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/Interceptor/ToLoginInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/Interceptor/ToLoginInterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/controller/MyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/controller/MyController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/controller/OtherController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/controller/OtherController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/controller/RoleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/controller/RoleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/util/VerifyUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/util/VerifyUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/Interceptor/AutoLoginInterceptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/Interceptor/IsLoginInterceptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/Interceptor/ToLoginInterceptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/config/SwaggerConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/controller/ErrorController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/controller/MyController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/controller/OtherController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/controller/RoleController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/domain/Role.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/domain/Roles.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/domain/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/domain/Users.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/mapper/RoleMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/mapper/UserMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/service/RoleService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/service/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/util/AutoUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/util/EmailUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/util/RedisUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/util/SendUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/cn/myeit/util/VerifyUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/datasource.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/mail.setting" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/redis.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/springmvc-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/test/Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/css/find.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/css/login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/css/my/change.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/css/my/desktop.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/css/my/my.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/css/role/add.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/css/role/data.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/css/user/add.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/css/user/data.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/css/print.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/css/reset.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/css/screen.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/css/typography.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/fonts/DroidSans-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/fonts/DroidSans.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/images/collapse.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/images/expand.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/images/explorer_icons.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/images/favicon-16x16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/images/favicon-32x32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/images/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/images/logo_small.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/images/pet_store_api.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/images/throbber.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/images/wordnik_api.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lang/ca.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lang/en.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lang/es.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lang/fr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lang/geo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lang/it.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lang/ja.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lang/ko-kr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lang/pl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lang/pt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lang/ru.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lang/tr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lang/translator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lang/zh-cn.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/backbone-min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/es5-shim.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/handlebars-4.0.5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/highlight.9.1.0.pack.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/highlight.9.1.0.pack_extended.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/jquery-1.8.0.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/jquery.ba-bbq.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/jquery.slideto.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/jquery.wiggle.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/js-yaml.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/jsoneditor.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/lodash.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/marked.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/object-assign-pollyfill.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/sanitize-html.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/lib/swagger-oauth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/o2c.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/swagger-ui.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/dist/swagger-ui.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/find.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/img/warn-red.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/js/find.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/js/jquery-3.6.4.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/js/jquery.cookie.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/js/login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/js/my/change.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/js/my/desktop.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/js/my/my.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/js/role/add.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/js/role/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/js/user/add.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/js/user/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/layui/css/layui.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/layui/css/modules/code.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/layui/css/modules/laydate/default/laydate.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/layui/css/modules/layer/default/icon-ext.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/layui/css/modules/layer/default/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/layui/css/modules/layer/default/layer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/layui/css/modules/layer/default/loading-0.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/layui/css/modules/layer/default/loading-1.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/layui/css/modules/layer/default/loading-2.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/layui/font/iconfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/layui/font/iconfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/layui/font/iconfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/layui/font/iconfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/layui/font/iconfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/layui/layui.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/my/change.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/my/desktop.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/my/my.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/my/role/add.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/my/role/data.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/my/user/add.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/classes/view/my/user/data.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/lib/activation-1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/lib/byte-buddy-1.7.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/lib/classmate-1.3.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/lib/commons-pool2-2.11.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/lib/druid-1.1.16.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/lib/gson-2.8.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/lib/guava-20.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/lib/hutool-all-5.8.16.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/lib/jackson-annotations-2.9.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/lib/jackson-core-2.9.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/lib/jackson-databind-2.9.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/lib/javassist-3.21.0-GA.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/lib/javax.mail-1.6.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/lib/jedis-4.2.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/lib/json-20211205.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/lib/mapstruct-1.2.0.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/lib/mybatis-3.5.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/lib/mybatis-spring-1.3.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/lib/mysql-connector-java-5.1.22.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/lib/reflections-0.9.11.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/lib/slf4j-api-1.7.24.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/lib/spring-aop-5.2.10.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/lib/spring-beans-5.2.10.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/lib/spring-context-5.2.10.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/lib/spring-core-5.2.10.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/lib/spring-expression-5.2.10.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/lib/spring-jcl-5.2.10.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/lib/spring-jdbc-5.2.10.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/lib/spring-plugin-core-1.2.0.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/lib/spring-plugin-metadata-1.2.0.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/lib/spring-test-5.2.10.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/lib/spring-tx-5.2.10.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/lib/spring-web-5.2.10.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/lib/spring-webmvc-5.2.10.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/lib/springfox-core-2.8.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/lib/springfox-schema-2.8.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/lib/springfox-spi-2.8.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/lib/springfox-spring-web-2.8.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/lib/springfox-swagger-common-2.8.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/lib/springfox-swagger-ui-2.8.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/lib/springfox-swagger2-2.8.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/lib/swagger-annotations-1.5.14.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/lib/swagger-models-1.5.14.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/his/web/WEB-INF/web.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -66,17 +237,19 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/java/project/his/src/main/resources&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/java/练习/MyBatis/练习1/test&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDK&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;65b50b04a6af50bb2f174db30a8c6dad&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -88,7 +261,9 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Tomcat 9.0.65" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.65" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+    <configuration name="Tomcat 9.0.65" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.65" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8" nameIsGenerated="true">
+      <option name="OPEN_IN_BROWSER" value="false" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/his" />
       <option name="COMMON_VM_ARGUMENTS" value="-Dfile.encoding=UTF-8" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
@@ -174,6 +349,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
+          <artifact name="his:war" />
           <artifact name="his:war exploded" />
         </option>
       </method>
@@ -192,7 +368,11 @@
       <workItem from="1684767605311" duration="1570000" />
       <workItem from="1684769217118" duration="1203000" />
       <workItem from="1684772617310" duration="951000" />
-      <workItem from="1684774735294" duration="1003000" />
+      <workItem from="1684774735294" duration="1858000" />
+      <workItem from="1685087252262" duration="1283000" />
+      <workItem from="1685090938096" duration="503000" />
+      <workItem from="1685094478970" duration="84000" />
+      <workItem from="1685177901670" duration="1179000" />
     </task>
     <task id="LOCAL-00001" summary="查看角色信息">
       <created>1684775628554</created>
@@ -201,7 +381,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684775628554</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="查看角色信息">
+      <created>1684775779762</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1684775779762</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
