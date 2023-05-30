@@ -2,3 +2,52 @@
 	margin-top: 20px;
 	margin-left: 10px;
 }
+
+
+.add-box{
+	width: 500px;
+	height: 300px;
+	margin: 0 auto;
+}
+
+.add-box-top{
+	border: 1px solid rgba(214, 214, 214, .5);
+	padding-bottom: 10px;
+}
+
+.add-box-search{
+	display: flex;
+	margin: 0 auto;
+	margin-top: 10px;
+	width: 400px;
+	justify-content: space-between;
+}
+
+.add-box-search .search-input{
+	width: 290px;
+}
+.add-box-search .search-btn{
+	width: 90px;
+}
+
+.add-box-con-card{
+	display: flex;
+	justify-content: center;
+	height: 40px;
+}
+
+.add-box-con-card .name{
+	line-height: 40px;
+	font-size: 18px;
+	width: 300px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid rgba(214, 214, 214, .5);
+}
+
+.add-box-con-card .status{
+	width: 100px;
+	display: flex;
+	justify-content: flex-end;
+	padding-bottom: 5px;
+	border-bottom: 1px solid rgba(214, 214, 214, .5);
+}

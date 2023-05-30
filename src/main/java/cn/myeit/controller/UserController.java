@@ -46,7 +46,7 @@ public class UserController extends AutoUtil {
             return SendUtil.ok("请输入邮箱");
         }
         //判断zjm/邮箱 是否重复
-        List<User> users = userService.findjmAndEmail(user.getZjm(), user.getEmail());
+        List<User> users = userService.findZjmAndEmail(user.getZjm(), user.getEmail());
         if(users.size()>0){
             for(User u:users){
                 if(user.getZjm().equals(u.getZjm())){
@@ -119,12 +119,12 @@ public class UserController extends AutoUtil {
         user.setUpdateUid(updateUser);
         user.setUpdateTime(new Date(System.currentTimeMillis()));
         //判断zjm/邮箱 是否重复
-        List<User> users = userService.findjmAndEmail(user.getZjm(), user.getEmail());
+        List<User> users = userService.findZjmAndEmail(user.getZjm(), user.getEmail());
         if(users.size()>0){
             for(User u:users){
-                if(user.getZjm().equals(u.getZjm())){
+                if(user.getZjm().equals(u.getZjm()) && user.getUid() != u.getUid()){
                     return SendUtil.ok("助记码已存在");
-                }else if(user.getEmail().equals(u.getEmail())){
+                }else if(user.getEmail().equals(u.getEmail()) && user.getUid() != u.getUid()){
                     return SendUtil.ok("邮箱已存在");
                 }
             }

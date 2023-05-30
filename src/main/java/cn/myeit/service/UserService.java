@@ -66,7 +66,7 @@ public class UserService {
      * @param email
      * @return
      */
-    public List<User> findjmAndEmail(String zjm,String email){
+    public List<User> findZjmAndEmail(String zjm,String email){
         return userMapper.findUserByZjmAndEmail(zjm,email);
     }
 
@@ -76,6 +76,11 @@ public class UserService {
      */
     public Long count(){
         return userMapper.findCountByUser();
+    }
+
+    public Long count(String likeZjm){
+        likeZjm = "%"+likeZjm+"%";
+        return userMapper.findCountByUserLikeZjm(likeZjm);
     }
 
     public List<User> getUsers(Integer page, Integer limit){
@@ -101,7 +106,7 @@ public class UserService {
 
     @Transactional(rollbackFor = Exception.class)
     public Long del(List<Long> uidBox){
-        Long del = userMapper.del(uidBox);
+        Long del = userMapper.delUserByUid(uidBox);
         if(del != uidBox.size()){
             //数量不同 回滚返回-1
             throw new RuntimeException("删除失败");
@@ -109,5 +114,9 @@ public class UserService {
             //一样删除成功 返回数量
             return del;
         }
+    }
+
+    public User findUser(String zjm){
+        return userMapper.findUserByZjm(zjm);
     }
 }

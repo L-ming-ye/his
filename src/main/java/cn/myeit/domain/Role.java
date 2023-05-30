@@ -1,5 +1,6 @@
 package cn.myeit.domain;
 
+import io.swagger.annotations.ApiModelProperty;
 import io.swagger.models.auth.In;
 
 import java.util.Date;
@@ -8,12 +9,19 @@ import java.util.Date;
  * 角色的实体类
  */
 public class Role {
+    @ApiModelProperty("角色id")
     private Long rid;
+    @ApiModelProperty("角色名字")
     private String rname;
+    @ApiModelProperty("创建人id")
     private User createUid;
+    @ApiModelProperty("创建时间")
     private Date createTime;
+    @ApiModelProperty("修改人id")
     private User updateUid;
+    @ApiModelProperty("修改时间")
     private Date updateTime;
+    @ApiModelProperty("状态")
     private Integer status;
 
     public Role() {

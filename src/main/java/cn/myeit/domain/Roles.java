@@ -15,7 +15,7 @@ public class Roles {
     @ApiModelProperty("每页几条数据")
     private Integer limit;
     @ApiModelProperty("数据")
-    public List<Role> data;
+    private List<Role> data;
 
     public Roles() {
     }

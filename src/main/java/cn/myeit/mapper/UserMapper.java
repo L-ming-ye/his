@@ -14,7 +14,7 @@ public interface UserMapper {
      * @return 用户信息
      */
 
-    @Select("SELECT uid,uname,age,sex,zjm,email,createTime,createUid,updateTime,updateUid,status FROM USER WHERE (zjm = #{username} OR email = #{username}) AND password = #{password}")
+    @Select("SELECT uid,uname,age,sex,zjm,email,createTime,createUid,updateTime,updateUid,status FROM USER WHERE (zjm = #{username} OR email = #{username}) AND password = #{password} AND status IN (0,1);")
     @Results({
             @Result(column = "uid", property = "uid"),
             @Result(column = "uname", property = "uname"),
@@ -35,7 +35,7 @@ public interface UserMapper {
      * @param uid
      * @return
      */
-    @Select("SELECT uid,uname,age,sex,zjm,email,createTime,createUid,updateTime,updateUid,STATUS FROM USER WHERE uid = #{uid}")
+    @Select("SELECT uid,uname,age,sex,zjm,email,createTime,createUid,updateTime,updateUid,STATUS FROM USER WHERE uid = #{uid} AND status IN (0,1);")
     User findUserByUid(Long uid);
 
     /**
@@ -72,6 +72,9 @@ public interface UserMapper {
 
     @Select("SELECT count(*) FROM user WHERE status IN (0,1 )")
     Long findCountByUser();
+
+    @Select("SELECT count(*) FROM user WHERE status IN (0,1) AND zjm LIKE #{likeZjm}")
+    Long findCountByUserLikeZjm(String likeZjm);
 
     @Select("SELECT uid,uname,age,sex,zjm,email,createTime,createUid,updateTime,updateUid,status FROM USER WHERE status != 2 LIMIT ${start},${end}")
     @Results({
@@ -115,5 +118,8 @@ public interface UserMapper {
                     "#{item}" +
                 "</foreach>" +
             "</script>")
-    Long del(@Param("uidBox") List uidBox);
+    Long delUserByUid(@Param("uidBox") List uidBox);
+
+    @Select("SELECT uid,uname,age,sex,zjm,email,createTime,createUid,updateTime,updateUid,status FROM USER WHERE zjm = #{zjm} AND status IN (0,1);")
+    User findUserByZjm(String zjm);
 }

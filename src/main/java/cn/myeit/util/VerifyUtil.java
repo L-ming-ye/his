@@ -23,7 +23,7 @@ public class VerifyUtil {
     public String createVerify(Integer count, Integer thickness, HttpServletResponse response){
         //定义图形验证码的长、宽、验证码字符数、干扰线宽度
         try {
-            ICaptcha captcha = CaptchaUtil.createShearCaptcha(200, 100, count, thickness);
+            ICaptcha captcha = CaptchaUtil.createShearCaptcha(300, 100, count, thickness);
             captcha.write(response.getOutputStream());
             return captcha.getCode();//返回验证码
         } catch (IOException e) {

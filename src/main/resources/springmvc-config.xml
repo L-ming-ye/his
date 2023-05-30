@@ -23,7 +23,7 @@
             <mvc:exclude-mapping path="/toLogin"/>
             <bean class="cn.myeit.Interceptor.AutoLoginInterceptor"></bean>
         </mvc:interceptor>
-        
+
         <!--判断是否登录拦截器-->
         <mvc:interceptor>
             <mvc:mapping path="/view/my/**"/>

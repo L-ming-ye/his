@@ -13,6 +13,9 @@
 	<body>
 		<!-- 操作按钮模板 -->
 		<script type="text/html" id="operate-box">
+			<button type="button" class="layui-btn layui-btn-xs add" onclick="openAdd(this)" lay-event="add">
+			    <i class="layui-icon layui-icon-add-1"></i> 添加
+			</button>
 			<button type="button" class="layui-btn layui-btn-xs edit" onclick="edit(this)" lay-event="edit">
 			    <i class="layui-icon layui-icon-edit"></i> 编辑
 			</button>
@@ -28,16 +31,344 @@
 		</div>
 		<table class="layui-hide" id="role-data"></table>
 
+		
+		<!-- 添加页面模板 -->
+		<script type="text/html" id="add-box-template">
+			<div class="add-box">
+				<input class="rid-flag" type="hidden" value="{{ d.rid }}">
+				<div class="add-box-top">
+					<!-- 顶部搜索 -->
+					<div class="add-box-search">
+						<input type="text" class="layui-input search-input" placeholder="根据zjm查找"/>
+						<button class="layui-btn search-btn" onclick="search()">搜索</button>
+					</div>
+				</div>
+				<div class="add-box-con" >
+					{{# layui.each(d.data, function(index, item){ }}
+						<div class="add-box-con-card layui-form">
+							<div class="name">{{= item.uid.zjm }}</div>
+							<div class="status"><input type="checkbox" class="add-status" lay-filter="add-status" lay-skin="switch" lay-text="移入|移出" {{ item.rid !=null?"checked":"" }}></div>
+						</div>
+					{{# });}}
+				</div>
+				<div class="add-box-bottom" id="add-box-bottom"></div>
+			</div>
+		</script>
+		<!-- 添加页面模板视图层-->
+		<script type="text/html" id="add-box"></script>
+		<!-- 编辑页面模板 -->
+		<script type="text/html" id="eidt-box">
+			<div class="layui-form" style="width: 400px;;margin: 0 auto;margin-top: 20px;">
+				<input class="edit-rid" type="hidden"/>
+				
+				<div class="layui-form-item">
+					<label class="layui-form-label">角色名字</label>
+					<div class="layui-input-inline layui-input-wrap">
+					  <input type="text" class="layui-input edit-rname">
+					</div>
+				</div>
+				
+				<div class="layui-form-item">
+					<label class="layui-form-label">状态</label>
+					<div class="layui-input-inline layui-input-wrap">
+						<input type="checkbox" lay-text="启用|禁用" lay-skin="switch" class="edit-status" lay-filter="edit-status">
+					</div>
+				</div>
+				
+				<div class="layui-form-item" style="display: flex;justify-content: center;">
+					<button class="layui-btn" style="width: 200px;" onclick="save()">保存</button>
+				</div>
+				
+			</div>
+		</script>
+
 		<!--事件-->
 		<script>
+			var editStatus = 0;
+			var openWin;
+			//监听选择性别按钮 和 状态开关
+			layui.use(function(){
+				var form = layui.form;
+				var layer = layui.layer;
+				//监听编辑面版的按钮
+				form.on('switch(edit-status)', function(data){
+					var elem = data.elem;// 获得 checkbox 原始 DOM 对象
+					editStatus = Number(elem.checked^1);//获取单选框的状态 使用异或状态1(true选中)状态为0(正常) 状态0(false未选中)状态为1(禁用)
+				});
+				
+				form.on('switch(add-status)', function(data){
+					var elem = data.elem;// 获得 checkbox 原始 DOM 对象
+					var status = elem.checked;//获取单选框的状态
+					var rid = $(".rid-flag").val();
+					//获取它的上一层的同级zjm
+					var zjm = $($(elem).parent().prev()).text();
+					$.post({
+						url:"/his/role/move",
+						data:{
+							rid,
+							zjm,
+							status
+						},
+						success:function(e){
+							var msg = e.msg;
+							layer.msg(msg, {
+							    time: 500
+							});
+							if(msg != "操作成功"){
+								console.log("进来了");
+								var switchStatus = !$(elem).prop("checked");
+								$(elem).prop("checked", switchStatus);
+								// 手动触发开关状态变化的监听事件
+								$(elem).trigger("change");
+								// 手动更新开关的样式
+								layui.form.render('checkbox');
+							}
+						}
+					})
+				});
+			  });
+			
 			function edit(e){
-
+				layer.open({
+				  type: 1, // page 层类型
+				  area: ['500px', '300px'],
+				  title: '角色编辑',
+				  shade: 0.6, // 遮罩透明度
+				  shadeClose: true, // 点击遮罩区域，关闭弹层
+				  maxmin: false, // 允许全屏最小化
+				  anim: 0, // 0-6 的动画形式，-1 不开启
+				  content: $('#eidt-box').html()
+				});
+				//重新渲染整个表单
+				layui.use('form', function(){
+				  var form = layui.form;
+				  form.render(); 
+				});
+				//获取当前行的数据赋值进表单
+				var tr = $(e).parent().parent().parent();//获取tr标签
+				var rid = tr.children("[data-field='rid']").attr("data-content");
+				var rname = tr.children("[data-field='rname']").children().text();
+				var status = tr.children("[data-field='status']").attr("data-content");
+				//赋值到表单
+				$(".edit-rid").val(rid);
+				$(".edit-rname").val(rname);
+				if(status == 0){
+					$(".edit-status").attr("checked",true);
+				}
+				//将当前用户的状态赋值到全局
+				editStatus = status;
+			}
+			function openAdd(e){
+				//获取角色id发送ajax请求获取data
+				var tr = $(e).parent().parent().parent();//获取tr标签
+				var rid = tr.children("[data-field='rid']").attr("data-content");
+				$.post({
+					url:"/his/role/get",
+					data:{
+						rid
+					},
+					success:function(e){
+						var data = e.data;
+						//将角色id也存入data里
+						data.rid = rid;
+						//将data注入模板
+						layui.use(function(){
+						  var laytpl = layui.laytpl;
+						  // 渲染
+						  // document.getElementById('add-box-template').innerHTML
+						  var getTpl = $("#add-box-template").html(); // 获取模板字符
+						  // 渲染并输出结果
+						  laytpl(getTpl).render(data, function(str){
+						    $("#add-box").html(str);
+							//添加用户进角色的操作
+							openWin = layer.open({
+							  type: 1, // page 层类型
+							  area: ['500px', '400px'],
+							  title: '角色添加',
+							  shade: 0.6, // 遮罩透明度
+							  shadeClose: true, // 点击遮罩区域，关闭弹层
+							  maxmin: false, // 允许全屏最小化
+							  anim: 0, // 0-6 的动画形式，-1 不开启
+							  content: $("#add-box").html()
+							});
+							//重新渲染整个表单
+							layui.use('form', function(){
+							  var form = layui.form;
+							  form.render(); 
+							});
+							//分页展示
+							paging(data.count,data.page,data.limit);
+						  });
+						});
+					}
+				})
 			}
 			function del(e){
-
+				//指定删除一个
+				// 获取到rid
+				var tr = $(e).parent().parent().parent();//获取tr标签
+				var uid = Number(tr.children("[data-field='rid']").attr("data-content"));
+				
+				$.post({
+					url:"/his/role/del",
+					contentType: 'application/json',
+					data:JSON.stringify([uid]),
+					success:function(e){
+						alert(e.msg);
+						if(e.msg=="删除成功"){
+							//如果删除成功重新渲染表格
+							var table = layui.table;
+							table.reload('role-data');
+						}
+					}
+				})
 			}
 			function delAll(){
-				
+				var table = layui.table;
+				// 获取选中的行数据
+				var checkStatus = table.checkStatus('role-data');
+				var data = checkStatus.data;
+				//循环遍历获取每一个数据对象的rid
+				var array = [];
+				for(index in data){
+					array.push(data[index].rid)
+				}
+				$.post({
+					url:"/his/role/del",
+					contentType: 'application/json',
+					data:JSON.stringify(array),
+					success:function(e){
+						alert(e.msg);
+						if(e.msg=="删除成功"){
+							//如果删除成功重新渲染表格
+							var table = layui.table;
+							table.reload('role-data');
+						}
+					}
+				})
+			}
+			function save(){
+				console.log("点击了保存");
+				var rid = $(".edit-rid").val();
+				var rname = $(".edit-rname").val();
+				var status = editStatus;
+				$.post({
+					url:"/his/role/change",
+					data:{
+						rid,
+						rname,
+						status,
+					},
+					success:function(e){
+						alert(e.msg);
+						if(e.msg == "修改成功"){
+							//修改成功后关闭弹出层 并重新渲染数据
+							// 关闭指定id的弹出层
+							var layer = layui.layer;
+							layer.closeAll();
+							// 重新加载表格数据
+							var table = layui.table;
+							table.reload('role-data');
+						}
+					}
+				})
+			}
+			
+			// 搜索
+			function search(){
+				//获取信息
+				var likeZjm = $(".search-input").val();
+				var rid = $(".rid-flag").val();
+				var limit = 5;
+				var page = 1;
+				//获取搜索的内容
+				$.post({
+					url:"/his/role/get",
+					data:{
+						rid,
+						limit,
+						page,
+						likeZjm
+					},
+					success:function(e){
+						var data = e.data;
+						//将角色id也存入data里
+						data.rid = rid;
+						//将data注入模板
+						layui.use(function(){
+						  var laytpl = layui.laytpl;
+						  var layer = layui.layer;
+						  // 渲染
+						  var getTpl = $("#add-box-template").html(); // 获取模板字符
+						  // 渲染并输出结果
+						  laytpl(getTpl).render(data, function(str){
+							var con = $($(str).find(".add-box-con")).html();
+							$(".add-box-con").html(con)
+							// layer.setContent(openWin, $("#add-box").html()); // 重新渲染div内容
+							//重新渲染整个表单
+							layui.use('form', function(){
+							  var form = layui.form;
+							  form.render(); 
+							});
+						  });
+						  //重新渲染分页
+						  paging(data.count,data.page,data.limit)
+						});
+					}
+				})
+			}
+			// 分页
+			function paging(count,page,limit){
+				layui.use(function(){
+				  var laypage = layui.laypage;
+				  laypage.render({
+				    elem: 'add-box-bottom',
+				    count: count,// 数据总数
+					page: page,// 当前页码
+					limit: limit,// 每页显示
+					jump: function(obj, first){
+					    // 首次不执行
+					    if(!first){
+							var rid = $(".rid-flag").val()
+							var limit = obj.limit;
+							var page = obj.curr;
+							var likeZjm = $(".search-input").val();
+							$.post({
+								url:"/his/role/get",
+								data:{
+									rid,
+									limit,
+									page,
+									likeZjm
+								},
+								success:function(e){
+									var data = e.data;
+									//将角色id也存入data里
+									data.rid = rid;
+									//将data注入模板
+									layui.use(function(){
+									  var laytpl = layui.laytpl;
+									  var layer = layui.layer;
+									  // 渲染
+									  var getTpl = $("#add-box-template").html(); // 获取模板字符
+									  // 渲染并输出结果
+									  laytpl(getTpl).render(data, function(str){
+										var con = $($(str).find(".add-box-con")).html();
+										$(".add-box-con").html(con)
+										// layer.setContent(openWin, $("#add-box").html()); // 重新渲染div内容
+										//重新渲染整个表单
+										layui.use('form', function(){
+										  var form = layui.form;
+										  form.render(); 
+										});
+									  });
+									});
+								}
+							})
+					    }
+					  }
+				  });
+				});
 			}
 		</script>
 	</body>

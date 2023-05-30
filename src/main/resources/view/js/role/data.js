@@ -26,7 +26,7 @@ $(document).ready(function(){
 	  table.render({
 		elem: '#role-data'
 		,height: 312
-		,url: 'http://localhost:8080/his/role/get' //数据接口
+		,url: 'http://localhost:8080/his/role/gets' //数据接口
 		,method:"POST"
 		,limit:5
 		,limits:[5,10,20]
@@ -79,7 +79,7 @@ $(document).ready(function(){
 				return status;
 			}
 		  },
-		  ,{title:"操作",width:153,templet:'#operate-box'}
+		  ,{title:"操作",width:224,templet:'#operate-box'}
 		]]
 	  });
 	});

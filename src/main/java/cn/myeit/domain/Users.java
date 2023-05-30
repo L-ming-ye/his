@@ -15,7 +15,7 @@ public class Users {
     @ApiModelProperty("每页几条数据")
     private Integer limit;
     @ApiModelProperty("数据")
-    public List<User> data;
+    private List<User> data;
 
     public Users() {
     }
